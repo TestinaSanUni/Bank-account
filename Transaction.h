@@ -15,7 +15,7 @@ public:
         trTime = time(nullptr);
     }
 
-    void printTransaction(); // print the transaction
+    void printTransaction();
 
 private:
     char operation;

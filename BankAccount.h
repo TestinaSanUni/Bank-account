@@ -4,7 +4,6 @@
 
 #ifndef BANK_ACCOUNT_BANKACCOUNT_H
 #define BANK_ACCOUNT_BANKACCOUNT_H
-#include <fstream>
 #include <string>
 #include <list>
 #include "Transaction.h"
@@ -15,8 +14,8 @@ public:
     BankAccount() = default;
     BankAccount(const string& i, float b) : iban(i), balance(b) {}
 
-    void addTransaction(char o, float a, const string& s, const string& r = ""); // add a new transaction
-    void printBankAccount(); // print the bank account
+    void addTransaction(char o, float a, const string& s, const string& r = "");
+    void printBankAccount();
 
 private:
     string iban;

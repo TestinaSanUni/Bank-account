@@ -3,3 +3,7 @@
 //
 
 #include "Transaction.h"
+
+void Transaction::printTransaction() {
+
+}

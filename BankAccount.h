@@ -11,11 +11,11 @@ using namespace std;
 
 class BankAccount {
 public:
-    BankAccount() = default;
     BankAccount(const string& i, float b) : iban(i), balance(b) {}
+    string getIban() const { return iban; }
 
     void addTransaction(char o, float a, const string& s, const string& r = "");
-    void printBankAccount();
+    void printBankAccount() const;
 
 private:
     string iban;

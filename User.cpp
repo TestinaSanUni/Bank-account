@@ -4,22 +4,25 @@
 
 #include "User.h"
 
-BankAccount User::getBankAccount(const string& iban) {
-
-}
-
-void User::addBankAccount(const string& iban, int balance) {
-
+void User::addBankAccount(const string& iban, const float balance) {
+    BankAccount newAccount(iban, balance);
+    accounts.push_back(newAccount);
 }
 
 void User::printUser() {
-
+    cout << name << " " << surname << endl;
+    for(const BankAccount& i : accounts) i.printBankAccount();
+    cout << endl;
 }
 
-void User::printBankAccounts() {
+void User::deleteBankAccount(const string &iban) {
+    auto iterator = accounts.begin();
+    auto endList = accounts.end();
 
-}
-
-void User::deleteBankAccount(const std::string &iban) {
-
+    while(iterator != endList) {
+        if(iterator->getIban() == iban) {
+            accounts.erase(iterator);
+            iterator = endList;
+        } else advance(iterator, 1);
+    }
 }

@@ -12,15 +12,13 @@ using namespace std;
 class User {
 public:
     User(const string& n, const string& s) : name(n), surname(s) {}
-    BankAccount getBankAccount(const string& iban);
     string getName() const { return name; }
     string getSurname() const { return surname; }
     void setName(const string& n) { name = n; }
     void setSurname(const string& s) { surname = s; }
 
-    void addBankAccount(const string& iban, int balance = 1000);
+    void addBankAccount(const string& iban, float balance = 1000);
     void printUser();
-    void printBankAccounts();
     void deleteBankAccount(const string& iban);
 
 private:

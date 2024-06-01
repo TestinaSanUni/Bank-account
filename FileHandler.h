@@ -7,8 +7,6 @@
 #include <fstream>
 #include <list>
 #include "User.h"
-#include "BankAccount.h"
-#include "Transaction.h"
 using namespace std;
 
 class FileHandler {
@@ -17,10 +15,10 @@ public:
     void saveData(const list<User>& list); // update files and release allocated memory
 
 private:
-    string readWord(); // read a single word of the file without using the operator ' >> '
+    list<BankAccount> loadBankAccounts();
+    list<Transaction> loadTransactions(const string& author);
 
-    ifstream fileReader;
-    ofstream fileWriter;
+    fstream file;
 };
 
 

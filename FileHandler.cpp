@@ -5,57 +5,65 @@
 #include "FileHandler.h"
 #include <iostream>
 
-//
-// Public methods
-//
-
 list<User> FileHandler::loadData() {
-    fileReader.open("Users.txt");
     list<User> users;
+    file.open("Data.txt", ios::in);
 
-    if(fileReader.is_open()) {
-        cout << "Il file si e' aperto correttamente" << endl;
+    if(file.is_open()) {
+        list<BankAccount> accounts;
+        string name, surname;
 
-        do {
-            User newUser(readWord(), readWord());
+        while(!file.eof() && file >> name && file >> surname) {
+            accounts = loadBankAccounts();
+            User newUser(name, surname, accounts);
             users.push_back(newUser);
-        } while(!fileReader.eof());
+        }
 
-        fileReader.close();
+        file.close();
     }
 
     return users;
 }
 
-void FileHandler::saveData(const list<User>& list) {
-    fileWriter.open("Users.txt");
+list<BankAccount> FileHandler::loadBankAccounts() {
+    list<BankAccount> accounts;
+    list<Transaction> transactions;
+    string iban;
+    float balance;
 
-    if(fileWriter.is_open()) {
-        const User& user = list.front();
-        fileWriter << user.getName() << " " << user.getSurname();
-
-        bool firstElement = true; // skip the first element of the list. It has already been printed differently
-        for(const User& i : list)
-            if(firstElement) firstElement = false;
-            else fileWriter << endl << i.getName() << " " << i.getSurname();
-
-        fileWriter.close();
+    while(file >> iban && iban != "end_accounts" && file >> balance) {
+        transactions = loadTransactions(iban);
+        BankAccount newBankAccount(iban, balance, transactions);
+        accounts.push_back(newBankAccount);
     }
+
+    return accounts;
 }
 
+list<Transaction> FileHandler::loadTransactions(const string& author) {
+    list<Transaction> transactions;
+    string type;
+    string iban;
+    bool role;
+    float amount;
+    time_t trTime;
 
-//
-// Private methods
-//
 
-string FileHandler::readWord() {
-    string word;
-    char character = fileReader.get();
-
-    while(character != ' ' && character != '\n' && !fileReader.eof()) {
-        word += character;
-        character = fileReader.get();
+    while(file >> type && type != "end_transactions") {
+        if (type == "B") {
+            file >> iban, file >> role, file >> amount, file >> trTime;
+            Transaction newTransaction(type[0], iban, role, amount, trTime);
+            transactions.push_back(newTransaction);
+        } else {
+            file >> amount, file >> trTime;
+            Transaction newTransaction(type[0], amount, trTime);
+            transactions.push_back(newTransaction);
+        }
     }
 
-    return word;
+    return transactions;
+}
+
+void FileHandler::saveData(const list<User>& list) {
+    // TODO: implement method
 }

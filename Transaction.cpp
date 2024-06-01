@@ -5,11 +5,16 @@
 #include "Transaction.h"
 
 void Transaction::printTransaction() const {
-    cout << "\t\t" << operation << " " << sender << " " << recipient << " " << amount << " ";
-    formatDate(trTime);
+    if(operation == 'B') {
+        if (role)
+            cout << "\t\t" << operation << " to " << account << " " << amount << "$ " << " ";
+        else
+            cout << "\t\t" << operation << " from " << account << " " << amount << "$ " << " ";
+    } else cout << "\t\t" << operation << " " << amount << "$ ";
+    formatDate();
 }
 
-void Transaction::formatDate(time_t time) const {
-    struct tm tm = *localtime(&time);
+void Transaction::formatDate() const {
+    struct tm tm = *localtime(&trTime);
     printf("%02d/%02d/%d %02d:%02d:%02d\n", tm.tm_mday, tm.tm_mon, tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
 }

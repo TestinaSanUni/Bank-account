@@ -4,9 +4,10 @@
 
 #include "BankAccount.h"
 
-void BankAccount::addTransaction(const char o, const float a, const string& s, const string& r) {
-    Transaction newTransaction(o, a, s, r);
-    transactions.push_back(newTransaction);
+void BankAccount::addTransaction(const char op, const float a, const string& r) {
+    // TODO: implement method
+//    Transaction newTransaction(op, r, a, time(nullptr));
+//    transactions.push_back(newTransaction);
 }
 
 void BankAccount::printBankAccount() const {

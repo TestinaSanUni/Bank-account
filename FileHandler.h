@@ -11,11 +11,11 @@ using namespace std;
 
 class FileHandler {
 public:
-    list<User> loadData(); // open the files and load the data structures on memory
+    map<string, User> loadData(); // open the files and load the data structures on memory
     void saveData(const list<User>& list); // update files and release allocated memory
 
 private:
-    list<BankAccount> loadBankAccounts();
+    map<string, BankAccount> loadBankAccounts();
     list<Transaction> loadTransactions(const string& author);
 
     fstream file;

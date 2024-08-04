@@ -7,22 +7,14 @@
 void User::addBankAccount(const string& iban, const float balance) {
     list<Transaction> transactions;
     BankAccount newAccount(iban, balance, transactions);
-    bankAccounts.push_back(newAccount);
+    bankAccounts.emplace(iban, newAccount);
 }
 
 void User::printUser() const {
-    cout << name << " " << surname << endl;
-    for(const BankAccount& i : bankAccounts) i.printBankAccount();
+    cout << name << endl;
+    for(const auto& i : bankAccounts) i.second.printBankAccount();
 }
 
-void User::deleteBankAccount(const string &iban) {
-    auto iterator = bankAccounts.begin();
-    auto endList = bankAccounts.end();
-
-    while(iterator != endList) {
-        if(iterator->getIban() == iban) {
-            bankAccounts.erase(iterator);
-            iterator = endList;
-        } else advance(iterator, 1);
-    }
+bool User::deleteBankAccount(const string &iban) {
+    return bankAccounts.erase(iban);
 }

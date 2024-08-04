@@ -4,14 +4,14 @@
 		"generator" : 
 		{
 			"multiConfig" : false,
-			"name" : "Ninja"
+			"name" : "MinGW Makefiles"
 		},
 		"paths" : 
 		{
-			"cmake" : "D:/CLion 2023.2.2/bin/cmake/win/x64/bin/cmake.exe",
-			"cpack" : "D:/CLion 2023.2.2/bin/cmake/win/x64/bin/cpack.exe",
-			"ctest" : "D:/CLion 2023.2.2/bin/cmake/win/x64/bin/ctest.exe",
-			"root" : "D:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.28"
+			"cmake" : "D:/CLion 2023.3.2/bin/cmake/win/x64/bin/cmake.exe",
+			"cpack" : "D:/CLion 2023.3.2/bin/cmake/win/x64/bin/cpack.exe",
+			"ctest" : "D:/CLion 2023.3.2/bin/cmake/win/x64/bin/ctest.exe",
+			"root" : "D:/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.28"
 		},
 		"version" : 
 		{
@@ -26,7 +26,7 @@
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-11ba09b01594ee4de48f.json",
+			"jsonFile" : "codemodel-v2-97d5a2ed18c8e49c4b9a.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-501d9acee6d1a6c1c376.json",
+			"jsonFile" : "cache-v2-12d94d1b80f03dccf97b.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-c3086a542e5e255f1362.json",
+			"jsonFile" : "cmakeFiles-v1-e2902636683a8b3ce293.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -53,7 +53,7 @@
 			}
 		},
 		{
-			"jsonFile" : "toolchains-v1-ef3a121e4d089298ba4c.json",
+			"jsonFile" : "toolchains-v1-1d20f0daea2ef3b0e01d.json",
 			"kind" : "toolchains",
 			"version" : 
 			{
@@ -66,7 +66,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-501d9acee6d1a6c1c376.json",
+			"jsonFile" : "cache-v2-12d94d1b80f03dccf97b.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +76,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-c3086a542e5e255f1362.json",
+			"jsonFile" : "cmakeFiles-v1-e2902636683a8b3ce293.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -86,7 +86,7 @@
 		},
 		"codemodel-v2" : 
 		{
-			"jsonFile" : "codemodel-v2-11ba09b01594ee4de48f.json",
+			"jsonFile" : "codemodel-v2-97d5a2ed18c8e49c4b9a.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -96,7 +96,7 @@
 		},
 		"toolchains-v1" : 
 		{
-			"jsonFile" : "toolchains-v1-ef3a121e4d089298ba4c.json",
+			"jsonFile" : "toolchains-v1-1d20f0daea2ef3b0e01d.json",
 			"kind" : "toolchains",
 			"version" : 
 			{

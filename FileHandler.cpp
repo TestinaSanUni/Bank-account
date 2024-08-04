@@ -5,18 +5,18 @@
 #include "FileHandler.h"
 #include <iostream>
 
-list<User> FileHandler::loadData() {
-    list<User> users;
+map<string, User> FileHandler::loadData() {
+    map<string, User> users;
     file.open("Data.txt", ios::in);
 
     if(file.is_open()) {
-        list<BankAccount> accounts;
-        string name, surname;
+        map<string, BankAccount> accounts;
+        string name[2];
 
-        while(!file.eof() && file >> name && file >> surname) {
+        while(!file.eof() && file >> name[0] && file >> name[1]) {
             accounts = loadBankAccounts();
-            User newUser(name, surname, accounts);
-            users.push_back(newUser);
+            User newUser(name[0] + " " + name[1], accounts);
+            users.emplace(name[0] + " " + name[1], newUser);
         }
 
         file.close();
@@ -25,8 +25,8 @@ list<User> FileHandler::loadData() {
     return users;
 }
 
-list<BankAccount> FileHandler::loadBankAccounts() {
-    list<BankAccount> accounts;
+map<string, BankAccount> FileHandler::loadBankAccounts() {
+    map<string, BankAccount> accounts;
     list<Transaction> transactions;
     string iban;
     float balance;
@@ -34,7 +34,7 @@ list<BankAccount> FileHandler::loadBankAccounts() {
     while(file >> iban && iban != "end_accounts" && file >> balance) {
         transactions = loadTransactions(iban);
         BankAccount newBankAccount(iban, balance, transactions);
-        accounts.push_back(newBankAccount);
+        accounts.emplace(iban, newBankAccount);
     }
 
     return accounts;
@@ -42,12 +42,10 @@ list<BankAccount> FileHandler::loadBankAccounts() {
 
 list<Transaction> FileHandler::loadTransactions(const string& author) {
     list<Transaction> transactions;
-    string type;
-    string iban;
+    string type, iban;
     bool role;
     float amount;
     time_t trTime;
-
 
     while(file >> type && type != "end_transactions") {
         if (type == "B") {

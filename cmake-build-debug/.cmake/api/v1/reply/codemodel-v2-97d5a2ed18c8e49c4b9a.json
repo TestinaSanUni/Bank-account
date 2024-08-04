@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Uni/C++ projects/Bank account/cmake-build-debug",
-		"source" : "D:/Uni/C++ projects/Bank account"
+		"build" : "D:/Matteo Uni/C++ projects/Bank account/cmake-build-debug",
+		"source" : "D:/Matteo Uni/C++ projects/Bank account"
 	},
 	"version" : 
 	{

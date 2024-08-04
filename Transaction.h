@@ -11,7 +11,7 @@ using namespace std;
 
 class Transaction {
 public:
-    Transaction(char o, float a, time_t t) : operation(o), amount(a), trTime(t) {}
+    Transaction(char o, float a, time_t t, bool r = false) : operation(o), amount(a), trTime(t), role(r) {}
     Transaction(char o, const string& u, bool r, float a, time_t t) : operation(o), account(u), role(r), amount(a), trTime(t) {}
     void printTransaction() const;
 

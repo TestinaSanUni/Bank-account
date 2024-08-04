@@ -1,14 +1,12 @@
 #include <iostream>
-#include <string>
-#include <list>
 #include "FileHandler.h"
 using namespace std;
 
 int main() {
     FileHandler fileHandler;
-    list<User> users = fileHandler.loadData();
+    map<string, User> users = fileHandler.loadData();
 
-    for(const User& i : users) i.printUser();
+    for(const auto& i : users) i.second.printUser();
 
 //    list<User> tempUsers;
 //    list<BankAccount> tempBankAccounts;

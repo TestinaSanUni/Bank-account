@@ -5,26 +5,23 @@
 #ifndef BANK_ACCOUNT_USER_H
 #define BANK_ACCOUNT_USER_H
 #include <string>
-#include <list>
+#include <map>
 #include "BankAccount.h"
 using namespace std;
 
 class User {
 public:
-    User(const string& n, const string& s, const list<BankAccount>& b) : name(n), surname(s), bankAccounts(b) {}
+    User(const string& n, const map<string, BankAccount>& b) : name(n), bankAccounts(b) {}
     string getName() const { return name; }
-    string getSurname() const { return surname; }
     void setName(const string& n) { name = n; }
-    void setSurname(const string& s) { surname = s; }
 
     void addBankAccount(const string& iban, float balance = 1000);
     void printUser() const;
-    void deleteBankAccount(const string& iban);
+    bool deleteBankAccount(const string& iban);
 
 private:
     string name;
-    string surname;
-    list<BankAccount> bankAccounts;
+    map<string, BankAccount> bankAccounts;
 };
 
 

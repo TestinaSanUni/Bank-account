@@ -5,7 +5,7 @@
 #include "User.h"
 
 void User::addBankAccount(const string& iban, const float balance) {
-    list<Transaction> transactions;
+    map<time_t, Transaction> transactions;
     BankAccount newAccount(iban, balance, transactions);
     bankAccounts.emplace(iban, newAccount);
 }

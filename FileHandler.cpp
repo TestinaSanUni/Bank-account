@@ -27,7 +27,7 @@ map<string, User> FileHandler::loadData() {
 
 map<string, BankAccount> FileHandler::loadBankAccounts() {
     map<string, BankAccount> accounts;
-    list<Transaction> transactions;
+    map<time_t, Transaction> transactions;
     string iban;
     float balance;
 
@@ -40,8 +40,8 @@ map<string, BankAccount> FileHandler::loadBankAccounts() {
     return accounts;
 }
 
-list<Transaction> FileHandler::loadTransactions(const string& author) {
-    list<Transaction> transactions;
+map<time_t, Transaction> FileHandler::loadTransactions(const string& author) {
+    map<time_t, Transaction> transactions;
     string type, iban;
     bool role;
     float amount;
@@ -51,11 +51,11 @@ list<Transaction> FileHandler::loadTransactions(const string& author) {
         if (type == "B") {
             file >> iban, file >> role, file >> amount, file >> trTime;
             Transaction newTransaction(type[0], iban, role, amount, trTime);
-            transactions.push_back(newTransaction);
+            transactions.emplace(trTime, newTransaction);
         } else {
             file >> amount, file >> trTime;
             Transaction newTransaction(type[0], amount, trTime);
-            transactions.push_back(newTransaction);
+            transactions.emplace(trTime, newTransaction);
         }
     }
 

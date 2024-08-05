@@ -5,22 +5,30 @@
 #ifndef BANK_ACCOUNT_BANKACCOUNT_H
 #define BANK_ACCOUNT_BANKACCOUNT_H
 #include <string>
-#include <list>
+#include <map>
 #include "Transaction.h"
 using namespace std;
 
 class BankAccount {
 public:
-    BankAccount(const string& i, float b, const list<Transaction>& t) : iban(i), balance(b), transactions(t) {}
-    string getIban() const { return iban; }
+    explicit BankAccount(float b = 0) : balance(b) {};
+    BankAccount(const string& i, float b, const map<time_t, Transaction>& t) : iban(i), balance(b), transactions(t) {}
 
-    void addTransaction(char o, float a, const string& r);
+    string getIban() const { return iban; }
+    float getBalance() const { return balance; }
+    Transaction getTransaction(const time_t& t) { return transactions[t]; }
+
+    void setIban(const string& i) { iban = i; }
+    void setBalance(float b) { balance = b; }
+
+    bool addTransaction(char o, float a, time_t t);
+    bool addTransaction(char o, const string& u, bool r, float a, time_t t);
     void printBankAccount() const;
 
 private:
     string iban;
     float balance;
-    list<Transaction> transactions;
+    map<time_t , Transaction> transactions;
 };
 
 

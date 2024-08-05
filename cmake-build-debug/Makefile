@@ -84,6 +84,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"D:\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"D:\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"D:\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"D:\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"D:\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"D:\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" "D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\\CMakeFiles\progress.marks"
@@ -128,12 +173,90 @@ Bank_account/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/build
 .PHONY : Bank_account/fast
 
+#=============================================================================
+# Target rules for targets named core
+
+# Build rule for target.
+core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 core
+.PHONY : core
+
+# fast build rule for target.
+core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/build
+.PHONY : core/fast
+
+#=============================================================================
+# Target rules for targets named Google_Tests_run
+
+# Build rule for target.
+Google_Tests_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Google_Tests_run
+.PHONY : Google_Tests_run
+
+# fast build rule for target.
+Google_Tests_run/fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\Google_Tests_run.dir\build.make test/CMakeFiles/Google_Tests_run.dir/build
+.PHONY : Google_Tests_run/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f test\lib\googlemock\CMakeFiles\gmock.dir\build.make test/lib/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f test\lib\googlemock\CMakeFiles\gmock_main.dir\build.make test/lib/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f test\lib\googletest\CMakeFiles\gtest.dir\build.make test/lib/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f test\lib\googletest\CMakeFiles\gtest_main.dir\build.make test/lib/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 BankAccount.obj: BankAccount.cpp.obj
 .PHONY : BankAccount.obj
 
 # target to build an object file
 BankAccount.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/BankAccount.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/BankAccount.cpp.obj
 .PHONY : BankAccount.cpp.obj
 
 BankAccount.i: BankAccount.cpp.i
@@ -141,7 +264,7 @@ BankAccount.i: BankAccount.cpp.i
 
 # target to preprocess a source file
 BankAccount.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/BankAccount.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/BankAccount.cpp.i
 .PHONY : BankAccount.cpp.i
 
 BankAccount.s: BankAccount.cpp.s
@@ -149,7 +272,7 @@ BankAccount.s: BankAccount.cpp.s
 
 # target to generate assembly for a file
 BankAccount.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/BankAccount.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/BankAccount.cpp.s
 .PHONY : BankAccount.cpp.s
 
 FileHandler.obj: FileHandler.cpp.obj
@@ -157,7 +280,7 @@ FileHandler.obj: FileHandler.cpp.obj
 
 # target to build an object file
 FileHandler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/FileHandler.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/FileHandler.cpp.obj
 .PHONY : FileHandler.cpp.obj
 
 FileHandler.i: FileHandler.cpp.i
@@ -165,7 +288,7 @@ FileHandler.i: FileHandler.cpp.i
 
 # target to preprocess a source file
 FileHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/FileHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/FileHandler.cpp.i
 .PHONY : FileHandler.cpp.i
 
 FileHandler.s: FileHandler.cpp.s
@@ -173,7 +296,7 @@ FileHandler.s: FileHandler.cpp.s
 
 # target to generate assembly for a file
 FileHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/FileHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/FileHandler.cpp.s
 .PHONY : FileHandler.cpp.s
 
 Transaction.obj: Transaction.cpp.obj
@@ -181,7 +304,7 @@ Transaction.obj: Transaction.cpp.obj
 
 # target to build an object file
 Transaction.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/Transaction.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Transaction.cpp.obj
 .PHONY : Transaction.cpp.obj
 
 Transaction.i: Transaction.cpp.i
@@ -189,7 +312,7 @@ Transaction.i: Transaction.cpp.i
 
 # target to preprocess a source file
 Transaction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/Transaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Transaction.cpp.i
 .PHONY : Transaction.cpp.i
 
 Transaction.s: Transaction.cpp.s
@@ -197,7 +320,7 @@ Transaction.s: Transaction.cpp.s
 
 # target to generate assembly for a file
 Transaction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/Transaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/Transaction.cpp.s
 .PHONY : Transaction.cpp.s
 
 User.obj: User.cpp.obj
@@ -205,7 +328,7 @@ User.obj: User.cpp.obj
 
 # target to build an object file
 User.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/User.cpp.obj
 .PHONY : User.cpp.obj
 
 User.i: User.cpp.i
@@ -213,7 +336,7 @@ User.i: User.cpp.i
 
 # target to preprocess a source file
 User.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/User.cpp.i
 .PHONY : User.cpp.i
 
 User.s: User.cpp.s
@@ -221,7 +344,7 @@ User.s: User.cpp.s
 
 # target to generate assembly for a file
 User.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Bank_account.dir\build.make CMakeFiles/Bank_account.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/User.cpp.s
 .PHONY : User.cpp.s
 
 main.obj: main.cpp.obj
@@ -255,8 +378,18 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Bank_account
+	@echo ... Google_Tests_run
+	@echo ... core
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... BankAccount.obj
 	@echo ... BankAccount.i
 	@echo ... BankAccount.s

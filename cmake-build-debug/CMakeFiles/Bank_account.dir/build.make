@@ -82,83 +82,20 @@ CMakeFiles/Bank_account.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Bank_account.dir/main.cpp.s"
 	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\main.cpp" -o CMakeFiles\Bank_account.dir\main.cpp.s
 
-CMakeFiles/Bank_account.dir/User.cpp.obj: CMakeFiles/Bank_account.dir/flags.make
-CMakeFiles/Bank_account.dir/User.cpp.obj: D:/Matteo\ Uni/C++\ projects/Bank\ account/User.cpp
-CMakeFiles/Bank_account.dir/User.cpp.obj: CMakeFiles/Bank_account.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Bank_account.dir/User.cpp.obj"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bank_account.dir/User.cpp.obj -MF CMakeFiles\Bank_account.dir\User.cpp.obj.d -o CMakeFiles\Bank_account.dir\User.cpp.obj -c "D:\Matteo Uni\C++ projects\Bank account\User.cpp"
-
-CMakeFiles/Bank_account.dir/User.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Bank_account.dir/User.cpp.i"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Matteo Uni\C++ projects\Bank account\User.cpp" > CMakeFiles\Bank_account.dir\User.cpp.i
-
-CMakeFiles/Bank_account.dir/User.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Bank_account.dir/User.cpp.s"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\User.cpp" -o CMakeFiles\Bank_account.dir\User.cpp.s
-
-CMakeFiles/Bank_account.dir/BankAccount.cpp.obj: CMakeFiles/Bank_account.dir/flags.make
-CMakeFiles/Bank_account.dir/BankAccount.cpp.obj: D:/Matteo\ Uni/C++\ projects/Bank\ account/BankAccount.cpp
-CMakeFiles/Bank_account.dir/BankAccount.cpp.obj: CMakeFiles/Bank_account.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Bank_account.dir/BankAccount.cpp.obj"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bank_account.dir/BankAccount.cpp.obj -MF CMakeFiles\Bank_account.dir\BankAccount.cpp.obj.d -o CMakeFiles\Bank_account.dir\BankAccount.cpp.obj -c "D:\Matteo Uni\C++ projects\Bank account\BankAccount.cpp"
-
-CMakeFiles/Bank_account.dir/BankAccount.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Bank_account.dir/BankAccount.cpp.i"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Matteo Uni\C++ projects\Bank account\BankAccount.cpp" > CMakeFiles\Bank_account.dir\BankAccount.cpp.i
-
-CMakeFiles/Bank_account.dir/BankAccount.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Bank_account.dir/BankAccount.cpp.s"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\BankAccount.cpp" -o CMakeFiles\Bank_account.dir\BankAccount.cpp.s
-
-CMakeFiles/Bank_account.dir/Transaction.cpp.obj: CMakeFiles/Bank_account.dir/flags.make
-CMakeFiles/Bank_account.dir/Transaction.cpp.obj: D:/Matteo\ Uni/C++\ projects/Bank\ account/Transaction.cpp
-CMakeFiles/Bank_account.dir/Transaction.cpp.obj: CMakeFiles/Bank_account.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Bank_account.dir/Transaction.cpp.obj"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bank_account.dir/Transaction.cpp.obj -MF CMakeFiles\Bank_account.dir\Transaction.cpp.obj.d -o CMakeFiles\Bank_account.dir\Transaction.cpp.obj -c "D:\Matteo Uni\C++ projects\Bank account\Transaction.cpp"
-
-CMakeFiles/Bank_account.dir/Transaction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Bank_account.dir/Transaction.cpp.i"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Matteo Uni\C++ projects\Bank account\Transaction.cpp" > CMakeFiles\Bank_account.dir\Transaction.cpp.i
-
-CMakeFiles/Bank_account.dir/Transaction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Bank_account.dir/Transaction.cpp.s"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\Transaction.cpp" -o CMakeFiles\Bank_account.dir\Transaction.cpp.s
-
-CMakeFiles/Bank_account.dir/FileHandler.cpp.obj: CMakeFiles/Bank_account.dir/flags.make
-CMakeFiles/Bank_account.dir/FileHandler.cpp.obj: D:/Matteo\ Uni/C++\ projects/Bank\ account/FileHandler.cpp
-CMakeFiles/Bank_account.dir/FileHandler.cpp.obj: CMakeFiles/Bank_account.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Bank_account.dir/FileHandler.cpp.obj"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bank_account.dir/FileHandler.cpp.obj -MF CMakeFiles\Bank_account.dir\FileHandler.cpp.obj.d -o CMakeFiles\Bank_account.dir\FileHandler.cpp.obj -c "D:\Matteo Uni\C++ projects\Bank account\FileHandler.cpp"
-
-CMakeFiles/Bank_account.dir/FileHandler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Bank_account.dir/FileHandler.cpp.i"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Matteo Uni\C++ projects\Bank account\FileHandler.cpp" > CMakeFiles\Bank_account.dir\FileHandler.cpp.i
-
-CMakeFiles/Bank_account.dir/FileHandler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Bank_account.dir/FileHandler.cpp.s"
-	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\FileHandler.cpp" -o CMakeFiles\Bank_account.dir\FileHandler.cpp.s
-
 # Object files for target Bank_account
 Bank_account_OBJECTS = \
-"CMakeFiles/Bank_account.dir/main.cpp.obj" \
-"CMakeFiles/Bank_account.dir/User.cpp.obj" \
-"CMakeFiles/Bank_account.dir/BankAccount.cpp.obj" \
-"CMakeFiles/Bank_account.dir/Transaction.cpp.obj" \
-"CMakeFiles/Bank_account.dir/FileHandler.cpp.obj"
+"CMakeFiles/Bank_account.dir/main.cpp.obj"
 
 # External object files for target Bank_account
 Bank_account_EXTERNAL_OBJECTS =
 
 Bank_account.exe: CMakeFiles/Bank_account.dir/main.cpp.obj
-Bank_account.exe: CMakeFiles/Bank_account.dir/User.cpp.obj
-Bank_account.exe: CMakeFiles/Bank_account.dir/BankAccount.cpp.obj
-Bank_account.exe: CMakeFiles/Bank_account.dir/Transaction.cpp.obj
-Bank_account.exe: CMakeFiles/Bank_account.dir/FileHandler.cpp.obj
 Bank_account.exe: CMakeFiles/Bank_account.dir/build.make
+Bank_account.exe: libcore.a
 Bank_account.exe: CMakeFiles/Bank_account.dir/linkLibs.rsp
 Bank_account.exe: CMakeFiles/Bank_account.dir/objects1.rsp
 Bank_account.exe: CMakeFiles/Bank_account.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Bank_account.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Bank_account.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Bank_account.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

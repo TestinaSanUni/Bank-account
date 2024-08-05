@@ -3,8 +3,8 @@ project(Bank_account)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Bank_account main.cpp
-        User.cpp
+add_executable(Bank_account main.cpp)
+set(SOURCE_FILES User.cpp
         User.h
         BankAccount.cpp
         BankAccount.h
@@ -12,3 +12,7 @@ add_executable(Bank_account main.cpp
         Transaction.h
         FileHandler.cpp
         FileHandler.h)
+add_library(core ${SOURCE_FILES})
+target_link_libraries(Bank_account core)
+
+add_subdirectory(test)

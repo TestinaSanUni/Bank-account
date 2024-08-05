@@ -1,0 +1,1 @@
+-I"D:/Matteo Uni/C++ projects/Bank account/test/lib/googlemock/include" -I"D:/Matteo Uni/C++ projects/Bank account/test/lib/googlemock" -isystem "D:/Matteo Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Matteo Uni/C++ projects/Bank account/test/lib/googletest"

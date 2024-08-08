@@ -6,12 +6,14 @@
 
 bool BankAccount::addTransaction(char o, float a, time_t t) {
     Transaction newTransaction(o, a, t);
+
     if(o == 'W')
         if(balance >= a) balance -= a;
         else return false;
     else balance += a;
 
     transactions.emplace(t, newTransaction);
+    printBankAccount();
     return true;
 }
 

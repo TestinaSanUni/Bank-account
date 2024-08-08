@@ -124,12 +124,27 @@ CMakeFiles/core.dir/FileHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/FileHandler.cpp.s"
 	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\FileHandler.cpp" -o CMakeFiles\core.dir\FileHandler.cpp.s
 
+CMakeFiles/core.dir/ProgramManager.cpp.obj: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/ProgramManager.cpp.obj: D:/Matteo\ Uni/C++\ projects/Bank\ account/ProgramManager.cpp
+CMakeFiles/core.dir/ProgramManager.cpp.obj: CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/core.dir/ProgramManager.cpp.obj"
+	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core.dir/ProgramManager.cpp.obj -MF CMakeFiles\core.dir\ProgramManager.cpp.obj.d -o CMakeFiles\core.dir\ProgramManager.cpp.obj -c "D:\Matteo Uni\C++ projects\Bank account\ProgramManager.cpp"
+
+CMakeFiles/core.dir/ProgramManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core.dir/ProgramManager.cpp.i"
+	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Matteo Uni\C++ projects\Bank account\ProgramManager.cpp" > CMakeFiles\core.dir\ProgramManager.cpp.i
+
+CMakeFiles/core.dir/ProgramManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core.dir/ProgramManager.cpp.s"
+	"D:\CLion 2023.3.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Matteo Uni\C++ projects\Bank account\ProgramManager.cpp" -o CMakeFiles\core.dir\ProgramManager.cpp.s
+
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/User.cpp.obj" \
 "CMakeFiles/core.dir/BankAccount.cpp.obj" \
 "CMakeFiles/core.dir/Transaction.cpp.obj" \
-"CMakeFiles/core.dir/FileHandler.cpp.obj"
+"CMakeFiles/core.dir/FileHandler.cpp.obj" \
+"CMakeFiles/core.dir/ProgramManager.cpp.obj"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
@@ -138,9 +153,10 @@ libcore.a: CMakeFiles/core.dir/User.cpp.obj
 libcore.a: CMakeFiles/core.dir/BankAccount.cpp.obj
 libcore.a: CMakeFiles/core.dir/Transaction.cpp.obj
 libcore.a: CMakeFiles/core.dir/FileHandler.cpp.obj
+libcore.a: CMakeFiles/core.dir/ProgramManager.cpp.obj
 libcore.a: CMakeFiles/core.dir/build.make
 libcore.a: CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Matteo Uni\C++ projects\Bank account\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libcore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\core.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\core.dir\link.txt --verbose=$(VERBOSE)
 

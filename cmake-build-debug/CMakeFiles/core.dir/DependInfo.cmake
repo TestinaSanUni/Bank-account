@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Matteo Uni/C++ projects/Bank account/BankAccount.cpp" "CMakeFiles/core.dir/BankAccount.cpp.obj" "gcc" "CMakeFiles/core.dir/BankAccount.cpp.obj.d"
   "D:/Matteo Uni/C++ projects/Bank account/FileHandler.cpp" "CMakeFiles/core.dir/FileHandler.cpp.obj" "gcc" "CMakeFiles/core.dir/FileHandler.cpp.obj.d"
+  "D:/Matteo Uni/C++ projects/Bank account/ProgramManager.cpp" "CMakeFiles/core.dir/ProgramManager.cpp.obj" "gcc" "CMakeFiles/core.dir/ProgramManager.cpp.obj.d"
   "D:/Matteo Uni/C++ projects/Bank account/Transaction.cpp" "CMakeFiles/core.dir/Transaction.cpp.obj" "gcc" "CMakeFiles/core.dir/Transaction.cpp.obj.d"
   "D:/Matteo Uni/C++ projects/Bank account/User.cpp" "CMakeFiles/core.dir/User.cpp.obj" "gcc" "CMakeFiles/core.dir/User.cpp.obj.d"
   )

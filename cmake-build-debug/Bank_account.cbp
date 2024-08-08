@@ -426,6 +426,12 @@
 		<Unit filename="D:/Matteo Uni/C++ projects/Bank account/FileHandler.h">
 			<Option target="core"/>
 		</Unit>
+		<Unit filename="D:/Matteo Uni/C++ projects/Bank account/ProgramManager.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="D:/Matteo Uni/C++ projects/Bank account/ProgramManager.h">
+			<Option target="core"/>
+		</Unit>
 		<Unit filename="D:/Matteo Uni/C++ projects/Bank account/Transaction.cpp">
 			<Option target="core"/>
 		</Unit>

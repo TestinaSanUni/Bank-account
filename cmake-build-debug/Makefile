@@ -299,6 +299,30 @@ FileHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/FileHandler.cpp.s
 .PHONY : FileHandler.cpp.s
 
+ProgramManager.obj: ProgramManager.cpp.obj
+.PHONY : ProgramManager.obj
+
+# target to build an object file
+ProgramManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/ProgramManager.cpp.obj
+.PHONY : ProgramManager.cpp.obj
+
+ProgramManager.i: ProgramManager.cpp.i
+.PHONY : ProgramManager.i
+
+# target to preprocess a source file
+ProgramManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/ProgramManager.cpp.i
+.PHONY : ProgramManager.cpp.i
+
+ProgramManager.s: ProgramManager.cpp.s
+.PHONY : ProgramManager.s
+
+# target to generate assembly for a file
+ProgramManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core.dir\build.make CMakeFiles/core.dir/ProgramManager.cpp.s
+.PHONY : ProgramManager.cpp.s
+
 Transaction.obj: Transaction.cpp.obj
 .PHONY : Transaction.obj
 
@@ -396,6 +420,9 @@ help:
 	@echo ... FileHandler.obj
 	@echo ... FileHandler.i
 	@echo ... FileHandler.s
+	@echo ... ProgramManager.obj
+	@echo ... ProgramManager.i
+	@echo ... ProgramManager.s
 	@echo ... Transaction.obj
 	@echo ... Transaction.i
 	@echo ... Transaction.s

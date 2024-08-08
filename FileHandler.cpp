@@ -32,7 +32,7 @@ map<string, BankAccount> FileHandler::loadBankAccounts() {
     float balance;
 
     while(file >> iban && iban != "end_accounts" && file >> balance) {
-        transactions = loadTransactions(iban);
+        transactions = loadTransactions();
         BankAccount newBankAccount(iban, balance, transactions);
         accounts.emplace(iban, newBankAccount);
     }
@@ -40,7 +40,7 @@ map<string, BankAccount> FileHandler::loadBankAccounts() {
     return accounts;
 }
 
-map<time_t, Transaction> FileHandler::loadTransactions(const string& author) {
+map<time_t, Transaction> FileHandler::loadTransactions() {
     map<time_t, Transaction> transactions;
     string type, iban;
     bool role;
@@ -62,6 +62,36 @@ map<time_t, Transaction> FileHandler::loadTransactions(const string& author) {
     return transactions;
 }
 
-void FileHandler::saveData(const list<User>& list) {
-    // TODO: implement method
+bool FileHandler::saveData(const map<string, User>& users) {
+    file.open("Data.txt", ios::out);
+
+    if(!file.is_open())
+        return false;
+
+    for (const auto &i: users) {
+        file << i.second.getName() << endl;
+
+        for(const auto& j : i.second.getBankAccounts()) {
+            file << j.first << " " << j.second.getBalance() << endl;
+
+            for(const auto& k : j.second.getTransactions()) {
+                if(k.second.getOperation() == 'B') {
+                    file << k.second.getOperation() << " ";
+                    file << k.second.getAccount() << " ";
+                    file << k.second.getRole() << " ";
+                    file << k.second.getAmount() << " ";
+                    file << k.first << endl;
+                } else {
+                    file << k.second.getOperation() << " ";
+                    file << k.second.getAmount() << " ";
+                    file << k.first << endl;
+                }
+            }
+            file << "end_transactions" << endl;
+        }
+        file << "end_accounts" << endl << endl;
+    }
+
+    file.close();
+    return true;
 }

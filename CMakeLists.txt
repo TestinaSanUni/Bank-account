@@ -11,7 +11,9 @@ set(SOURCE_FILES User.cpp
         Transaction.cpp
         Transaction.h
         FileHandler.cpp
-        FileHandler.h)
+        FileHandler.h
+        ProgramManager.cpp
+        ProgramManager.h)
 add_library(core ${SOURCE_FILES})
 target_link_libraries(Bank_account core)
 

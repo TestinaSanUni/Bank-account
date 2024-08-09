@@ -13,17 +13,16 @@ int main() {
         cout << "2) Create new Bank account;" << endl;
         cout << "3) Request new transaction;" << endl;
         cout << "4) Edit User;" << endl;
-        cout << "5) Edit Bank account;" << endl;
-        cout << "6) Print data;" << endl;
-        cout << "7) Delete User;" << endl;
-        cout << "8) Delete Bank account;" << endl;
-        cout << "9) Exit and save;" << endl;
+        cout << "5) Print data;" << endl;
+        cout << "6) Delete User;" << endl;
+        cout << "7) Delete Bank account;" << endl;
+        cout << "8) Exit and save;" << endl;
         cout << "0) Exit without saving;" << endl;
 
         do {
             cout << "Operation required: " << endl;
             cin >> choice;
-        } while(choice < 0 || choice > 9);
+        } while(choice < 0 || choice > 8);
 
         cout << endl;
 
@@ -39,7 +38,10 @@ int main() {
                 cout << "Enter your surname:";
                 cin >> surname;
 
-                pM.addUser(name + " " + surname);
+                if(pM.addUser(name + " " + surname))
+                    cout << "User added successfully" << endl;
+                else
+                    cout << "This name " << name + " " + surname << " has already been used" << endl;
 
                 break;
 
@@ -55,7 +57,7 @@ int main() {
                 if(pM.addBankAccount(name + " " + surname, iban))
                     cout << "Bank Account added successfully" << endl;
                 else
-                    cout << "The user " << name + " " + surname << " does not exist" << endl;
+                    cout << "User not found or iban already existing" << endl;
 
                 break;
 
@@ -103,25 +105,29 @@ int main() {
 
             case 4:
                 // edit user
-                cout << "Enter the new name:";
+                cout << "Enter old name:";
+                cin >> operation; // random free variable
+                cout << "Enter old surname:";
+                cin >> recipient; // random free variable
+                cout << "Enter new name:";
                 cin >> name;
-                cout << "Enter the new surname:";
+                cout << "Enter new surname:";
                 cin >> surname;
 
-//                pM.getUser()
+                if(pM.setUserName(operation + " " + recipient, name + " " + surname))
+                    cout << "Name changed successfully" << endl;
+                else
+                    cout << "User not found or name not available" << endl;
 
                 break;
 
             case 5:
-                // edit bank account
-                break;
-
-            case 6:
+                // print
                 pM.printUsers();
 
                 break;
 
-            case 7:
+            case 6:
                 // delete user
                 cout << "Enter the name of the user you want to delete:";
                 cin >> name;
@@ -135,7 +141,7 @@ int main() {
 
                 break;
 
-            case 8:
+            case 7:
                 // delete bank account
                 cout << "Enter the name of the user you want to delete:";
                 cin >> name;
@@ -151,18 +157,22 @@ int main() {
 
                 break;
 
-            case 9:
-                if(pM.saveData()) cout << "Data saved successfully" << endl;
-                else cout << "Something went wrong with saving data" << endl;
+            case 8:
+                // save and exit
+                if(pM.saveData())
+                    cout << "Data saved successfully" << endl;
+                else
+                    cout << "Something went wrong with saving data" << endl;
 
                 break;
 
             default:
+                // exit without saving
                 cout << "Data has not been saved" << endl;
 
                 break;
         }
-    } while(choice != 0 && choice != 9);
+    } while(choice != 0 && choice != 8);
 
     return 0;
 }

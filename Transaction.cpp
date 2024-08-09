@@ -7,9 +7,9 @@
 void Transaction::printTransaction() const {
     if(operation == 'B') {
         if (role)
-            cout << "\t\t" << operation << " to " << account << " $" << amount << " - ";
+            cout << "\t\t" << operation << " to " << recipient << " $" << amount << " - ";
         else
-            cout << "\t\t" << operation << " from " << account << " $" << amount << " - ";
+            cout << "\t\t" << operation << " from " << recipient << " $" << amount << " - ";
     } else cout << "\t\t" << operation << " $" << amount << " - ";
     formatDate();
 }

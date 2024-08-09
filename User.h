@@ -24,6 +24,7 @@ public:
     void addBankAccount(const string& iban);
     bool addTransaction(const string& iban, char o, float a, time_t t);
     bool addTransaction(const string& iban, char o, const string& u, bool r, float a, time_t t);
+
     bool deleteBankAccount(const string& iban);
     void printUser() const;
 

@@ -4,13 +4,33 @@
 
 #include "ProgramManager.h"
 
-void ProgramManager::addUser(const std::string &name) {
-    User newUser(name);
-    users.emplace(name, newUser);
+//
+// basic methods
+//
+
+bool ProgramManager::setUserName(const std::string &oldName, const std::string &newName) {
+    if(findUser(oldName) && !findUser(newName)) {
+        users[oldName].setName(newName);
+        return true;
+    }
+    return false;
+}
+
+
+//
+// main methods
+//
+
+bool ProgramManager::addUser(const std::string &name) {
+    if(!findUser(name)) {
+        users.emplace(name, User(name));
+        return true;
+    }
+    return false;
 }
 
 bool ProgramManager::addBankAccount(const std::string &name, const std::string &iban) {
-    if(findUser(name)) {
+    if(findUser(name) && checkAllIban(iban)) {
         users[name].addBankAccount(iban);
         return true;
     }
@@ -52,8 +72,13 @@ void ProgramManager::printUsers() const {
         i.second.printUser();
 }
 
-bool ProgramManager::findUser(const string& n) {
-    return users.find(n) != users.end();
+
+//
+// auxiliary methods
+//
+
+bool ProgramManager::findUser(const string& name) const {
+    return users.find(name) != users.end();
 }
 
 string ProgramManager::findRecipientBankAccount(const string& iban) {
@@ -64,4 +89,11 @@ string ProgramManager::findRecipientBankAccount(const string& iban) {
         }
     }
     return "";
+}
+
+bool ProgramManager::checkAllIban(const std::string &iban) {
+    for(const auto& i : users)
+        if(i.second.findBankAccount(iban))
+            return false;
+    return true;
 }

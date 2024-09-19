@@ -4,32 +4,39 @@
 
 #include "BankAccount.h"
 
-bool BankAccount::addTransaction(char o, float a, time_t t) {
-    Transaction newTransaction(o, a, t);
+int BankAccount::addTransaction(char o, float a) {
+    time_t t;
+    Transaction newTransaction(o, a, std::time(&t));
 
     if(o == 'W')
         if(balance >= a) balance -= a;
-        else return false;
+        else return 5; // insufficient balance
     else balance += a;
 
     transactions.emplace(t, newTransaction);
     printBankAccount();
-    return true;
+    return 0;
 }
 
-bool BankAccount::addTransaction(char o, const std::string &u, bool r, float a, time_t t) {
-    Transaction newTransaction(o, u, r, a, t);
-    if(r)
-        if(balance >= a) balance -= a;
-        else return false;
-    else balance += a;
+int BankAccount::addTransaction(char o, const std::string &u, bool r, float a) {
+    time_t t;
+    Transaction newTransaction(o, u, r, a, std::time(&t));
+
+    if(r) {
+        if (balance >= a) balance -= a;
+        else return 5; // insufficient balance
+    } else balance += a;
 
     transactions.emplace(t, newTransaction);
-    return true;
+    return 0;
 }
 
 void BankAccount::printBankAccount() const {
-    cout << "\t" << iban << " " << balance << endl;
+    cout << "\t" << iban << " - $" << balance << endl;
     for(const auto& i : transactions) i.second.printTransaction();
     cout << endl;
+}
+
+void BankAccount::clearTransactions() {
+    transactions.clear();
 }

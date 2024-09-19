@@ -11,8 +11,6 @@ using namespace std;
 
 class FileHandler {
 public:
-//    const fstream& getFile() const { return file; }
-
     map<string, User> loadData(); // open the files and load the data structures on memory
     bool saveData(const map<string, User>& users); // update files and release allocated memory
 

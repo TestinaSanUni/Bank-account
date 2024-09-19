@@ -1,2 +1,0 @@
-"D:\CLion 2023.3.2\bin\mingw\bin\ar.exe" qc libcore.a CMakeFiles/core.dir/User.cpp.obj CMakeFiles/core.dir/BankAccount.cpp.obj CMakeFiles/core.dir/Transaction.cpp.obj CMakeFiles/core.dir/FileHandler.cpp.obj CMakeFiles/core.dir/ProgramManager.cpp.obj
-"D:\CLion 2023.3.2\bin\mingw\bin\ranlib.exe" libcore.a

@@ -68,7 +68,7 @@ bool FileHandler::saveData(const map<string, User>& users) {
     if(!file.is_open())
         return false;
 
-    for (const auto &i: users) {
+    for(const auto &i: users) {
         file << i.second.getName() << endl;
 
         for(const auto& j : i.second.getBankAccounts()) {

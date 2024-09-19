@@ -25,9 +25,10 @@ public:
     void setBalance(float b) { balance = b; } // used for tests
 
     // main methods
-    bool addTransaction(char o, float a, time_t t);
-    bool addTransaction(char o, const string& u, bool r, float a, time_t t);
+    int addTransaction(char o, float a);
+    int addTransaction(char o, const string& u, bool r, float a);
     void printBankAccount() const;
+    void clearTransactions();
 
 private:
     string iban;

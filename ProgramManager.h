@@ -15,24 +15,32 @@ public:
 
     map<string, User> getUsers() const { return users; }
     User getUser(const string& name) { return users[name]; }
-    bool setUserName(const string& oldName, const string& newName);
+    int setUserName(const string& oldName, const string& newName);
 
     // main methods
-    bool addUser(const string& name);
-    bool addBankAccount(const string& name, const string& iban);
-    bool addTransaction(const string& name, const string& iban, char o, float a, time_t t);
-    bool addTransaction(const string& name, const string& iban, char o, const string& u, float a, time_t t);
+    int addUser(const string& name);
+    int addBankAccount(const string& name, const string& iban);
+    int addTransaction(const string& name, const string& iban, char o, float a);
+    int addTransaction(const string& name, const string& iban, char o, const string& u, float a);
 
-    bool deleteUser(const string& name);
-    bool deleteBankAccount(const string& name, const string& iban);
+    void printInfo() const;
+    void printInfo(char operation); // prints all transactions given an operation
+    void printInfo(string& date); // prints all transactions given a date
+
+    void clearTransactions();
+    void clearTransactions(const string& name, const string& iban);
+
+    int deleteUser(const string& name);
+    int deleteBankAccount(const string& name, const string& iban);
     bool saveData();
-    void printUsers() const;
 
 private:
     // auxiliary methods
     bool findUser(const string& name) const;
     string findRecipientBankAccount(const string& iban);
     bool checkAllIban(const string& iban);
+    string formatData(time_t time);
+    bool checkData(const string& date);
 
     FileHandler fileHandler;
     map<string, User> users;

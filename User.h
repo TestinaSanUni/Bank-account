@@ -22,11 +22,13 @@ public:
 
     // main methods
     void addBankAccount(const string& iban);
-    bool addTransaction(const string& iban, char o, float a, time_t t);
-    bool addTransaction(const string& iban, char o, const string& u, bool r, float a, time_t t);
+    int addTransaction(const string& iban, char o, float a);
+    int addTransaction(const string& iban, char o, const string& u, bool r, float a);
 
-    bool deleteBankAccount(const string& iban);
     void printUser() const;
+    void clearTransactions();
+    void clearTransactions(const string& iban);
+    int deleteBankAccount(const string& iban);
 
     // auxiliary methods
     bool findBankAccount(const string& iban) const;

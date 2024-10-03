@@ -22,8 +22,8 @@ public:
 
     // main methods
     void addBankAccount(const string& iban);
-    int addTransaction(const string& iban, char o, float a);
-    int addTransaction(const string& iban, char o, const string& u, bool r, float a);
+    int addTransaction(const string& iban, char o, float a, time_t t);
+    int addTransaction(const string& iban, char o, const string& u, bool r, float a, time_t t);
 
     void printUser() const;
     void clearTransactions();

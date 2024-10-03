@@ -11,7 +11,7 @@
 class ProgramManager {
 public:
     // basic methods
-    ProgramManager() { users = fileHandler.loadData(); }
+    ProgramManager() { users = fileHandler.loadData("Data.txt"); }
 
     map<string, User> getUsers() const { return users; }
     User getUser(const string& name) { return users[name]; }
@@ -20,12 +20,12 @@ public:
     // main methods
     int addUser(const string& name);
     int addBankAccount(const string& name, const string& iban);
-    int addTransaction(const string& name, const string& iban, char o, float a);
-    int addTransaction(const string& name, const string& iban, char o, const string& u, float a);
+    int addTransaction(const string& name, const string& iban, char o, float a, time_t t = 0);
+    int addTransaction(const string& name, const string& iban, char o, const string& u, float a, time_t = 0);
 
     void printInfo() const;
-    void printInfo(char operation); // prints all transactions given an operation
-    void printInfo(string& date); // prints all transactions given a date
+    int printInfo(char operation); // prints all transactions given an operation
+    int printInfo(string date); // prints all transactions given a date
 
     void clearTransactions();
     void clearTransactions(const string& name, const string& iban);

@@ -54,8 +54,6 @@ build CMakeFiles/Bank_account.dir/main.cpp.obj: CXX_COMPILER__Bank_account_unsca
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Bank_account.dir
   OBJECT_FILE_DIR = CMakeFiles\Bank_account.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Bank_account.dir\
-  TARGET_PDB = Bank_account.pdb
 
 
 # =============================================================================
@@ -71,10 +69,9 @@ build Bank_account.exe: CXX_EXECUTABLE_LINKER__Bank_account_Debug CMakeFiles/Ban
   OBJECT_DIR = CMakeFiles\Bank_account.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Bank_account.dir\
   TARGET_FILE = Bank_account.exe
   TARGET_IMPLIB = libBank_account.dll.a
-  TARGET_PDB = Bank_account.pdb
+  TARGET_PDB = Bank_account.exe.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target core
@@ -90,40 +87,30 @@ build CMakeFiles/core.dir/User.cpp.obj: CXX_COMPILER__core_unscanned_Debug D$:/U
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\core.dir
   OBJECT_FILE_DIR = CMakeFiles\core.dir
-  TARGET_COMPILE_PDB = CMakeFiles\core.dir\core.pdb
-  TARGET_PDB = libcore.pdb
 
 build CMakeFiles/core.dir/BankAccount.cpp.obj: CXX_COMPILER__core_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/BankAccount.cpp || cmake_object_order_depends_target_core
   DEP_FILE = CMakeFiles\core.dir\BankAccount.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\core.dir
   OBJECT_FILE_DIR = CMakeFiles\core.dir
-  TARGET_COMPILE_PDB = CMakeFiles\core.dir\core.pdb
-  TARGET_PDB = libcore.pdb
 
 build CMakeFiles/core.dir/Transaction.cpp.obj: CXX_COMPILER__core_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/Transaction.cpp || cmake_object_order_depends_target_core
   DEP_FILE = CMakeFiles\core.dir\Transaction.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\core.dir
   OBJECT_FILE_DIR = CMakeFiles\core.dir
-  TARGET_COMPILE_PDB = CMakeFiles\core.dir\core.pdb
-  TARGET_PDB = libcore.pdb
 
 build CMakeFiles/core.dir/FileHandler.cpp.obj: CXX_COMPILER__core_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/FileHandler.cpp || cmake_object_order_depends_target_core
   DEP_FILE = CMakeFiles\core.dir\FileHandler.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\core.dir
   OBJECT_FILE_DIR = CMakeFiles\core.dir
-  TARGET_COMPILE_PDB = CMakeFiles\core.dir\core.pdb
-  TARGET_PDB = libcore.pdb
 
 build CMakeFiles/core.dir/ProgramManager.cpp.obj: CXX_COMPILER__core_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/ProgramManager.cpp || cmake_object_order_depends_target_core
   DEP_FILE = CMakeFiles\core.dir\ProgramManager.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\core.dir
   OBJECT_FILE_DIR = CMakeFiles\core.dir
-  TARGET_COMPILE_PDB = CMakeFiles\core.dir\core.pdb
-  TARGET_PDB = libcore.pdb
 
 
 # =============================================================================
@@ -138,9 +125,8 @@ build libcore.a: CXX_STATIC_LIBRARY_LINKER__core_Debug CMakeFiles/core.dir/User.
   OBJECT_DIR = CMakeFiles\core.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\core.dir\core.pdb
   TARGET_FILE = libcore.a
-  TARGET_PDB = libcore.pdb
+  TARGET_PDB = core.a.dbg
 
 
 #############################################
@@ -227,8 +213,6 @@ build test/CMakeFiles/Google_Tests_run.dir/RunAllTests.cpp.obj: CXX_COMPILER__Go
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = test\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = test\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = test\Google_Tests_run.pdb
 
 build test/CMakeFiles/Google_Tests_run.dir/FileHandlerTest.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/test/FileHandlerTest.cpp || cmake_object_order_depends_target_Google_Tests_run
   DEP_FILE = test\CMakeFiles\Google_Tests_run.dir\FileHandlerTest.cpp.obj.d
@@ -236,8 +220,6 @@ build test/CMakeFiles/Google_Tests_run.dir/FileHandlerTest.cpp.obj: CXX_COMPILER
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = test\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = test\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = test\Google_Tests_run.pdb
 
 build test/CMakeFiles/Google_Tests_run.dir/UserTest.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/test/UserTest.cpp || cmake_object_order_depends_target_Google_Tests_run
   DEP_FILE = test\CMakeFiles\Google_Tests_run.dir\UserTest.cpp.obj.d
@@ -245,8 +227,6 @@ build test/CMakeFiles/Google_Tests_run.dir/UserTest.cpp.obj: CXX_COMPILER__Googl
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = test\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = test\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = test\Google_Tests_run.pdb
 
 build test/CMakeFiles/Google_Tests_run.dir/BankAccountTest.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/test/BankAccountTest.cpp || cmake_object_order_depends_target_Google_Tests_run
   DEP_FILE = test\CMakeFiles\Google_Tests_run.dir\BankAccountTest.cpp.obj.d
@@ -254,8 +234,6 @@ build test/CMakeFiles/Google_Tests_run.dir/BankAccountTest.cpp.obj: CXX_COMPILER
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = test\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = test\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = test\Google_Tests_run.pdb
 
 build test/CMakeFiles/Google_Tests_run.dir/TransactionTest.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/test/TransactionTest.cpp || cmake_object_order_depends_target_Google_Tests_run
   DEP_FILE = test\CMakeFiles\Google_Tests_run.dir\TransactionTest.cpp.obj.d
@@ -263,8 +241,13 @@ build test/CMakeFiles/Google_Tests_run.dir/TransactionTest.cpp.obj: CXX_COMPILER
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = test\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = test\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = test\Google_Tests_run.pdb
+
+build test/CMakeFiles/Google_Tests_run.dir/ProgramManagerTest.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug D$:/Uni/C++$ projects/Bank$ account/test/ProgramManagerTest.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = test\CMakeFiles\Google_Tests_run.dir\ProgramManagerTest.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
+  OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = test\CMakeFiles\Google_Tests_run.dir
 
 
 # =============================================================================
@@ -274,16 +257,15 @@ build test/CMakeFiles/Google_Tests_run.dir/TransactionTest.cpp.obj: CXX_COMPILER
 #############################################
 # Link the executable test\Google_Tests_run.exe
 
-build test/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug test/CMakeFiles/Google_Tests_run.dir/RunAllTests.cpp.obj test/CMakeFiles/Google_Tests_run.dir/FileHandlerTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/UserTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/BankAccountTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/TransactionTest.cpp.obj | lib/libgtest.a lib/libgtest_main.a libcore.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a libcore.a
+build test/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug test/CMakeFiles/Google_Tests_run.dir/RunAllTests.cpp.obj test/CMakeFiles/Google_Tests_run.dir/FileHandlerTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/UserTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/BankAccountTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/TransactionTest.cpp.obj test/CMakeFiles/Google_Tests_run.dir/ProgramManagerTest.cpp.obj | lib/libgtest.a lib/libgtest_main.a libcore.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a libcore.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  libcore.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = test\CMakeFiles\Google_Tests_run.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = test\CMakeFiles\Google_Tests_run.dir\
   TARGET_FILE = test\Google_Tests_run.exe
   TARGET_IMPLIB = test\libGoogle_Tests_run.dll.a
-  TARGET_PDB = test\Google_Tests_run.pdb
+  TARGET_PDB = Google_Tests_run.exe.dbg
 
 
 #############################################
@@ -440,8 +422,6 @@ build test/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: CXX_COMPILE
   INCLUDES = -I"D:/Uni/C++ projects/Bank account/test/lib/googlemock/include" -I"D:/Uni/C++ projects/Bank account/test/lib/googlemock" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\lib\googlemock\CMakeFiles\gmock.dir
   OBJECT_FILE_DIR = test\lib\googlemock\CMakeFiles\gmock.dir\src
-  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -456,9 +436,8 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug test/lib/googlemock
   OBJECT_DIR = test\lib\googlemock\CMakeFiles\gmock.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgmock.a
-  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gmock.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock_main
@@ -475,8 +454,6 @@ build test/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_C
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googlemock/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googlemock" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\lib\googlemock\CMakeFiles\gmock_main.dir
   OBJECT_FILE_DIR = test\lib\googlemock\CMakeFiles\gmock_main.dir\src
-  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -491,9 +468,8 @@ build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug test/lib/
   OBJECT_DIR = test\lib\googlemock\CMakeFiles\gmock_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgmock_main.a
-  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gmock_main.a.dbg
 
 
 #############################################
@@ -580,8 +556,6 @@ build test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILE
   INCLUDES = -I"D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -I"D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\lib\googletest\CMakeFiles\gtest.dir
   OBJECT_FILE_DIR = test\lib\googletest\CMakeFiles\gtest.dir\src
-  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -596,9 +570,8 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug test/lib/googletest
   OBJECT_DIR = test\lib\googletest\CMakeFiles\gtest.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgtest.a
-  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gtest.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest_main
@@ -615,8 +588,6 @@ build test/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_C
   INCLUDES = -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest/include" -isystem "D:/Uni/C++ projects/Bank account/test/lib/googletest"
   OBJECT_DIR = test\lib\googletest\CMakeFiles\gtest_main.dir
   OBJECT_FILE_DIR = test\lib\googletest\CMakeFiles\gtest_main.dir\src
-  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -631,9 +602,8 @@ build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug test/lib/
   OBJECT_DIR = test\lib\googletest\CMakeFiles\gtest_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgtest_main.a
-  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gtest_main.a.dbg
 
 
 #############################################
@@ -772,14 +742,14 @@ build test/lib/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineRCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCCompiler.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystem.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestRCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Determine-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake D$:/Uni/C++$ projects/Bank$ account/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/Config.cmake.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/internal_utils.cmake
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake D$:/Uni/C++$ projects/Bank$ account/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/Config.cmake.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineRCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCCompiler.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystem.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestRCCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Determine-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake D$:/Uni/C++$ projects/Bank$ account/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/Config.cmake.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/internal_utils.cmake: phony
+build CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake D$:/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake D$:/Uni/C++$ projects/Bank$ account/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googlemock/cmake/gmock_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/CMakeLists.txt D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/Config.cmake.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/gtest_main.pc.in D$:/Uni/C++$ projects/Bank$ account/test/lib/googletest/cmake/internal_utils.cmake: phony
 
 
 #############################################

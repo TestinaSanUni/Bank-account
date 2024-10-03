@@ -1,0 +1,6 @@
+Mario Rossi
+iban 20
+D 50 0
+end_transactions
+end_accounts
+

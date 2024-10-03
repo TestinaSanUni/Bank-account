@@ -13,7 +13,9 @@ int ProgramManager::setUserName(const std::string &oldName, const std::string &n
     if(!findUser(oldName)) return 1; // user not found
     if(findUser(newName)) return 3; // user already existing
 
-    users[oldName].setName(newName);
+    users.emplace(newName, users[oldName]);
+    deleteUser(oldName);
+    users[newName].setName(newName);
     return 0;
 }
 
@@ -37,21 +39,21 @@ int ProgramManager::addBankAccount(const std::string &name, const std::string &i
     return 0;
 }
 
-int ProgramManager::addTransaction(const std::string &name, const std::string &iban, char o, float a) {
+int ProgramManager::addTransaction(const std::string &name, const std::string &iban, char o, float a, time_t t) {
     if(!findUser(name)) return 1; // user not found
 
-    return users[name].addTransaction(iban, o, a);
+    return users[name].addTransaction(iban, o, a, t);
 }
 
-int ProgramManager::addTransaction(const std::string &name, const std::string &iban, char o, const std::string &u, float a) {
+int ProgramManager::addTransaction(const std::string &name, const std::string &iban, char o, const std::string &u, float a, time_t t) {
     string recipientName = findRecipientBankAccount(u);
 
     if(!findUser(name)) return 1; // user not found
     if(recipientName == " ") return 6; // recipient account not found
     if(iban == u) return 7; // sender and recipient are the same
 
-    int result = users[name].addTransaction(iban, o, u, true, a);
-    if(!result) users[recipientName].addTransaction(u, o, iban, false, a);
+    int result = users[name].addTransaction(iban, o, u, true, a, t);
+    if(!result) users[recipientName].addTransaction(u, o, iban, false, a, t);
     return result;
 }
 
@@ -63,10 +65,9 @@ void ProgramManager::printInfo() const {
         i.second.printUser();
         cout << " ---------------------------------------------------------------------- " << endl;
     }
-
 }
 
-void ProgramManager::printInfo(char operation) {
+int ProgramManager::printInfo(char operation) {
     bool foundUser = false, foundAccount = false, foundTransaction = false;
 
     for(const auto& i : users) {
@@ -95,10 +96,11 @@ void ProgramManager::printInfo(char operation) {
         }
     }
 
-    if(!foundTransaction) cout << "There are no transactions with the requested operation" << endl;
+    if(!foundTransaction) return 8;
+    return 0;
 }
 
-void ProgramManager::printInfo(std::string& date) {
+int ProgramManager::printInfo(std::string date) {
     bool foundUser = false, foundAccount = false, foundTransaction = false;
 
     if(checkData(date)) {
@@ -128,8 +130,9 @@ void ProgramManager::printInfo(std::string& date) {
             }
         }
 
-        if(!foundTransaction) cout << "There are no transactions with the requested date" << endl;
-    } else cout << "The date is not correct" << endl;
+        if(!foundTransaction) return 8;
+    } else return 9;
+    return 0;
 }
 
 // ======================================== Clears ==============================================
@@ -157,7 +160,7 @@ int ProgramManager::deleteBankAccount(const std::string &name, const std::string
 }
 
 bool ProgramManager::saveData() {
-    return fileHandler.saveData(users);
+    return fileHandler.saveData("Data.txt", users);
 }
 
 

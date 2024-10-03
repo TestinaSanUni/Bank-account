@@ -21,12 +21,12 @@ public:
     Transaction getTransaction(const time_t& t) { return transactions[t]; }
     map<time_t , Transaction> getTransactions() const { return transactions; }
 
-    void setIban(const string& i) { iban = i; } // used for tests
-    void setBalance(float b) { balance = b; } // used for tests
+//    void setIban(const string& i) { iban = i; } // used for tests
+//    void setBalance(float b) { balance = b; } // used for tests
 
     // main methods
-    int addTransaction(char o, float a);
-    int addTransaction(char o, const string& u, bool r, float a);
+    int addTransaction(char o, float a, time_t t);
+    int addTransaction(char o, const string& u, bool r, float a, time_t t);
     void printBankAccount() const;
     void clearTransactions();
 

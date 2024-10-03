@@ -146,7 +146,9 @@ int main() {
                     cin >> operation;
                 } while(operation != 'D' && operation != 'W' && operation != 'B');
 
-                pM.printInfo(operation);
+                result = pM.printInfo(operation);
+                if(result)
+                    printError(result);
 
                 break;
 
@@ -154,7 +156,10 @@ int main() {
                 // print transactions by date
                 cout << "Insert a date (dd/mm/yyyy): ";
                 cin >> name; // random free variable (date)
-                pM.printInfo(name);
+
+                result = pM.printInfo(name);
+                if(result)
+                    printError(result);
 
                 break;
 
@@ -261,5 +266,14 @@ void printError(int val) {
 
         case 7:
             cout << endl << "Sender and recipient are the same" << endl;
+            break;
+
+        case 8:
+            cout << endl << "No transaction found" << endl;
+            break;
+
+        case 9:
+            cout << endl << "Incorrect data" << endl;
+            break;
     }
 }

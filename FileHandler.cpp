@@ -5,9 +5,9 @@
 #include "FileHandler.h"
 #include <iostream>
 
-map<string, User> FileHandler::loadData() {
+map<string, User> FileHandler::loadData(const std::string& fileName) {
     map<string, User> users;
-    file.open("Data.txt", ios::in);
+    file.open(fileName, ios::in);
 
     if(file.is_open()) {
         map<string, BankAccount> accounts;
@@ -62,8 +62,8 @@ map<time_t, Transaction> FileHandler::loadTransactions() {
     return transactions;
 }
 
-bool FileHandler::saveData(const map<string, User>& users) {
-    file.open("Data.txt", ios::out);
+bool FileHandler::saveData(const std::string& fileName, const map<string, User>& users) {
+    file.open(fileName, ios::out);
 
     if(!file.is_open())
         return false;

@@ -14,22 +14,22 @@ void User::addBankAccount(const string& iban) {
     bankAccounts.emplace(iban, newAccount);
 }
 
-int User::addTransaction(const std::string &iban, char o, float a) {
+int User::addTransaction(const std::string &iban, char o, float a, time_t t) {
     if(!findBankAccount(iban)) return 2; // account not found
 
-    return bankAccounts[iban].addTransaction(o, a);
+    return bankAccounts[iban].addTransaction(o, a, t);
 }
 
-int User::addTransaction(const std::string &iban, char o, const std::string &u, bool r, float a) {
+int User::addTransaction(const std::string &iban, char o, const std::string &u, bool r, float a, time_t t) {
     if(!findBankAccount(iban)) return 2; // account not found
 
-    return bankAccounts[iban].addTransaction(o, u, r, a);
+    return bankAccounts[iban].addTransaction(o, u, r, a, t);
 }
 
 // ======================================================================================
 
 void User::printUser() const {
-    cout << endl << name << endl;
+    cout << endl << name << endl << endl;
     for(const auto& i : bankAccounts)
         i.second.printBankAccount();
 }
@@ -45,7 +45,8 @@ void User::clearTransactions(const std::string &iban) {
 }
 
 int User::deleteBankAccount(const string &iban) {
-    return !bankAccounts.erase(iban);
+    if(!findBankAccount(iban)) return 2; // bank account not found
+    return !bankAccounts.erase(iban); // return 0 if deleted successfully
 }
 
 

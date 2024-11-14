@@ -7,7 +7,7 @@
 
 TEST(BankAccount, DefaultConstructorTest) {
     BankAccount bankAccount;
-    ASSERT_EQ(bankAccount.getIban(), "");
+    ASSERT_EQ(bankAccount.getName(), "");
     ASSERT_EQ(bankAccount.getBalance(), 0);
 }
 
@@ -16,9 +16,9 @@ TEST(BankAccount, CustomConstructorTest) {
     transactions.emplace(1717133339, Transaction('D', 30, 1717133339));
     transactions.emplace(1717133338, Transaction('B', "recipient", true, 50, 1717133338));
 
-    BankAccount bankAccount("iban", 100, transactions);
+    BankAccount bankAccount("name", 100, transactions);
 
-    ASSERT_EQ(bankAccount.getIban(), "iban");
+    ASSERT_EQ(bankAccount.getName(), "name");
     ASSERT_EQ(bankAccount.getBalance(), 100);
 
     ASSERT_EQ(bankAccount.getTransaction(1717133339).getTrTime(), 1717133339);
@@ -36,7 +36,7 @@ TEST(BankAccount, CustomConstructorTest) {
 
 TEST(BankAccount, AddTransactionTest) {
     map<time_t, Transaction> transactions;
-    BankAccount bankAccount("iban", 20, transactions);
+    BankAccount bankAccount("name", 20, transactions);
 
     // deposit
     bankAccount.addTransaction('D', 80, 1717133339);
@@ -65,7 +65,7 @@ TEST(BankAccount, AddTransactionTest) {
 
 TEST(BankAccount, ClearTransactionsTest) {
     map<time_t, Transaction> transactions;
-    BankAccount bankAccount("iban", 20, transactions);
+    BankAccount bankAccount("name", 20, transactions);
 
     bankAccount.addTransaction('D', 50, 1717133340);
     ASSERT_EQ(bankAccount.getTransactions().empty(), 0);

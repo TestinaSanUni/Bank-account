@@ -6,6 +6,7 @@
 #define BANK_ACCOUNT_BANKACCOUNT_H
 #include <string>
 #include <map>
+#include <list>
 #include "Transaction.h"
 using namespace std;
 
@@ -13,25 +14,30 @@ class BankAccount {
 public:
     // basic methods
     explicit BankAccount(float b = 0) : balance(b) {};
-    explicit BankAccount(const string& i, float b = 0) : iban(i), balance(b) {}
-    BankAccount(const string& i, float b, const map<time_t, Transaction>& t) : iban(i), balance(b), transactions(t) {}
+    explicit BankAccount(const string& i, float b = 0) : name(i), balance(b) {}
+    BankAccount(const string& i, float b, const map<time_t, Transaction>& t) : name(i), balance(b), transactions(t) {}
 
-    string getIban() const { return iban; }
+    string getName() const { return name; }
     float getBalance() const { return balance; }
     Transaction getTransaction(const time_t& t) { return transactions[t]; }
-    map<time_t , Transaction> getTransactions() const { return transactions; }
-
-//    void setIban(const string& i) { iban = i; } // used for tests
-//    void setBalance(float b) { balance = b; } // used for tests
+    list<time_t> getTransactions() const;
+    void setName(const string& n) { name = n; }
 
     // main methods
-    int addTransaction(char o, float a, time_t t);
-    int addTransaction(char o, const string& u, bool r, float a, time_t t);
-    void printBankAccount() const;
+    int addTransaction(time_t t, int o, float a);
+    int addTransaction(time_t t, int o, float a, const string& u, bool r);
+
+    void printAccount() const;
+    int editTransaction(int id, int o, float a);
+    int editTransaction(int id, int o, float a, const string& u, bool r);
+
+    int deleteTransaction(int id);
     void clearTransactions();
 
 private:
-    string iban;
+    Transaction getTransactionById(int id) const;
+
+    string name;
     float balance;
     map<time_t , Transaction> transactions;
 };

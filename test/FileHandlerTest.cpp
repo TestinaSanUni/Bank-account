@@ -10,7 +10,7 @@ TEST(FileHandler, LoadAndSaveDataTest) {
     transactions.emplace(0, Transaction('D', 50, 0));
 
     map<string, BankAccount> bankAccounts;
-    bankAccounts.emplace("iban", BankAccount("iban", 20, transactions));
+    bankAccounts.emplace("name", BankAccount("name", 20, transactions));
 
     map<string, User> users;
     users.emplace("Mario Rossi", User("Mario Rossi", bankAccounts));
@@ -19,9 +19,9 @@ TEST(FileHandler, LoadAndSaveDataTest) {
     fileHandler.saveData("Data.txt", users);
 
     map<string, User> userCheck = fileHandler.loadData("Data.txt");
-    ASSERT_EQ(userCheck["Mario Rossi"].getBankAccount("iban").getBalance(), 20);
-    ASSERT_EQ(userCheck["Mario Rossi"].getBankAccount("iban").getTransaction(0).getOperation(), 'D');
-    ASSERT_EQ(userCheck["Mario Rossi"].getBankAccount("iban").getTransaction(0).getAccount(), "");
-    ASSERT_EQ(userCheck["Mario Rossi"].getBankAccount("iban").getTransaction(0).getRole(), false);
-    ASSERT_EQ(userCheck["Mario Rossi"].getBankAccount("iban").getTransaction(0).getAmount(), 50);
+    ASSERT_EQ(userCheck["Mario Rossi"].getAccount("name").getBalance(), 20);
+    ASSERT_EQ(userCheck["Mario Rossi"].getAccount("name").getTransaction(0).getOperation(), 'D');
+    ASSERT_EQ(userCheck["Mario Rossi"].getAccount("name").getTransaction(0).getAccount(), "");
+    ASSERT_EQ(userCheck["Mario Rossi"].getAccount("name").getTransaction(0).getRole(), false);
+    ASSERT_EQ(userCheck["Mario Rossi"].getAccount("name").getTransaction(0).getAmount(), 50);
 }

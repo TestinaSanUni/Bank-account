@@ -11,31 +11,36 @@ using namespace std;
 class User {
 public:
     // basic methods
-    User() = default;
-    explicit User(const string& n) : name(n) {}
-    User(const string& n, const map<string, BankAccount>& b) : name(n), bankAccounts(b) {}
+    explicit User(const string& n = "") : name(n) {}
+    User(const string& n, const map<string, BankAccount>& b) : name(n), accounts(b) {}
 
     string getName() const { return name; }
-    BankAccount getBankAccount(const string& iban) { return bankAccounts[iban]; }
-    map<string, BankAccount> getBankAccounts() const { return bankAccounts; }
+    BankAccount getAccount(const string& account) { return accounts[account]; }
+    list<string> getAccounts() const;
     void setName(const string& n) { name = n; }
 
     // main methods
-    void addBankAccount(const string& iban);
-    int addTransaction(const string& iban, char o, float a, time_t t);
-    int addTransaction(const string& iban, char o, const string& u, bool r, float a, time_t t);
+    int addAccount(const string& account);
+    int addTransaction(const string& account, time_t t, int o, float a);
+    int addTransaction(const string& account, time_t t, int o, float a, const string& u, bool r);
 
     void printUser() const;
+    int searchAccount(const string& account) const;
+    int editAccount(const string& oldName, const string& newName);
+    int editTransaction(const string& account, int id, int o, float a);
+    int editTransaction(const string& account, int id, int o, float a, const string& u, bool r);
+
+    int deleteAccount(const string& account);
+    int deleteTransaction(const string& account, int id);
+    void clearTransactions(const string& account);
     void clearTransactions();
-    void clearTransactions(const string& iban);
-    int deleteBankAccount(const string& iban);
 
     // auxiliary methods
-    bool findBankAccount(const string& iban) const;
+    bool findAccount(const string &account) const;
 
 private:
     string name;
-    map<string, BankAccount> bankAccounts;
+    map<string, BankAccount> accounts;
 };
 
 

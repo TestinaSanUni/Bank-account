@@ -11,8 +11,8 @@ using namespace std;
 
 class FileHandler {
 public:
-    map<string, User> loadData(const string& fileName); // open the files and load the data structures on memory
-    bool saveData(const string& fileName, const map<string, User>& users); // update files and release allocated memory
+    map<string, User> loadData(); // open the files and load the data structures on memory
+    bool saveData(const map<string, User>& users); // update files and release allocated memory
 
 private:
     map<string, BankAccount> loadBankAccounts();

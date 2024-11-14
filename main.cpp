@@ -6,6 +6,8 @@ void printError(int val);
 
 int main() {
 
+    // TODO FileHandler: scoprire perché non può essere passato da un metodo all'altro
+
     ProgramManager pM;
 
     int choice, result;
@@ -16,213 +18,253 @@ int main() {
         cout << "2) Create new Bank account;" << endl;
         cout << "3) Request new transaction;" << endl;
         cout << "4) Edit User;" << endl;
-        cout << "5) Print data;" << endl;
-        cout << "6) Print transactions by type;" << endl;
-        cout << "7) Print transactions by date;" << endl;
-        cout << "8) Reset transactions;" << endl;
-        cout << "9) Reset transactions from one Bank account;" << endl;
-        cout << "10) Delete User;" << endl;
-        cout << "11) Delete Bank account;" << endl;
-        cout << "12) Exit and save;" << endl;
+        cout << "5) Edit Bank account;" << endl;
+        cout << "6) Edit Transaction;" << endl;
+        cout << "7) Print data;" << endl;
+        cout << "8) Print transactions by type;" << endl;
+        cout << "9) Print transactions by date;" << endl;
+        cout << "10) Search Bank account;" << endl;
+        cout << "11) Delete User;" << endl;
+        cout << "12) Delete Bank account;" << endl;
+        cout << "13) Delete Transaction;" << endl;
+        cout << "14) Reset transactions from one Bank account;" << endl;
+        cout << "15) Reset transactions;" << endl;
+        cout << "16) Exit and save;" << endl;
         cout << "0) Exit without saving;" << endl;
 
         do {
             cout << "Operation required: ";
             cin >> choice;
-        } while(choice < 0 || choice > 12);
+        } while(choice < 0 || choice > 16);
 
         cout << endl;
 
-        string name, surname, iban, recipient;
-        char operation;
+        string name, surname, account, recipient;
+        int operation, role;
         float amount;
 
-        switch (choice) {
+        switch(choice) {
             case 1:
                 // add new user
                 cout << "Enter your name: ";
-                cin >> name;
-                cout << "Enter your surname: ";
-                cin >> surname;
+                cin >> name, cin >> surname;
 
                 result = pM.addUser(name + " " + surname);
-                if(!result)
-                    cout << endl << "User added successfully" << endl;
-                else
-                    printError(result);
+
+                if(!result) cout << endl << "User added successfully" << endl;
+                else printError(result);
 
                 break;
 
             case 2:
                 // add new bank account
                 cout << "Enter your name: ";
-                cin >> name;
-                cout << "Enter your surname: ";
-                cin >> surname;
-                cout << "Enter the iban: ";
-                cin >> iban;
+                cin >> name, cin >> surname;
+                cout << "Enter the name of the Bank Account: ";
+                cin >> account;
 
-                result = pM.addBankAccount(name + " " + surname, iban);
-                if(!result)
-                    cout << endl << "Bank Account added successfully" << endl;
-                else
-                    printError(result);
+                result = pM.addBankAccount(name + " " + surname, account);
+
+                if(!result) cout << endl << "Bank Account added successfully" << endl;
+                else printError(result);
 
                 break;
 
             case 3:
                 // add new transaction
                 cout << "Enter your name: ";
-                cin >> name;
-                cout << "Enter your surname: ";
-                cin >> surname;
-                name += " " + surname;
+                cin >> name, cin >> surname;
+                name = name + " " + surname;
+                cout << "Enter the name of the Bank Account: ";
+                cin >> account;
+                cout << "Enter the operation (deposit: 1, withdrawal: 2, bank transfert: 3): ";
+                cin >> operation;
+                cout << "Enter the amount: ";
+                cin >> amount;
 
-                cout << "Enter one of your Bank Accounts' iban: ";
-                cin >> iban;
-
-                do {
-                    cout << "Enter the operation type (deposit: D, withdrawal: W, bank transfert: B): ";
-                    cin >> operation;
-                } while(operation != 'B' && operation != 'W' && operation != 'D');
-
-                if(operation == 'B') {
-                    cout << "Enter recipient's iban: ";
+                if(operation == 3) {
+                    cout << "Enter recipient's Bank Account name: ";
                     cin >> recipient;
 
-                    cout << "Enter the amount: ";
-                    cin >> amount;
-
-                    result = pM.addTransaction(name, iban, operation, recipient, amount);
-                    if(!result) {
-                        cout << endl << "Transaction added successfully" << endl;
-                        cout << "Your new balance is: " << pM.getUser(name).getBankAccount(iban).getBalance() << endl;
-                    } else
-                        printError(result);
+                    result = pM.addTransaction(name, account, operation, recipient, amount);
                 } else {
-                    cout << "Enter the amount: ";
-                    cin >> amount;
-
-                    result = pM.addTransaction(name, iban, operation, amount);
-                    if(!result) {
-                        cout << endl << "Transaction added successfully" << endl;
-                        cout << "Your new balance is: " << pM.getUser(name).getBankAccount(iban).getBalance() << endl;
-                    } else {
-                        printError(result);
-                    }
+                    result = pM.addTransaction(name, account, operation, amount);
                 }
+
+                if(!result) {
+                    cout << endl << "Transaction added successfully" << endl;
+                    cout << "Your new balance is: " << pM.getUser(name).getAccount(account).getBalance() << endl;
+                } else printError(result);
 
                 break;
 
             case 4:
                 // edit user
                 cout << "Enter old name: ";
-                cin >> iban; // random free variable (old name)
-                cout << "Enter old surname: ";
-                cin >> recipient; // random free variable (old surname)
+                cin >> account, cin >> recipient; // random free variable (old name, old surname)
                 cout << "Enter new name: ";
-                cin >> name;
-                cout << "Enter new surname: ";
-                cin >> surname;
+                cin >> name, cin >> surname;
 
-                result = pM.setUserName(iban + " " + recipient, name + " " + surname);
-                if(!result)
-                    cout << endl << "Name changed successfully" << endl;
-                else
-                    printError(result);
+                result = pM.editUser(account + " " + recipient, name + " " + surname);
+
+                if(!result) cout << endl << "Name changed successfully" << endl;
+                else printError(result);
 
                 break;
 
             case 5:
+                // edit bank account
+                cout << "Enter your name: ";
+                cin >> name, cin >> surname;
+                cout << "Enter old Bank Account: ";
+                cin >> account;
+                cout << "Enter new Bank Account name: ";
+                cin >> recipient; // random free variable (new name)
+
+                result = pM.editAccount(name + " " + surname, account, recipient);
+
+                if(!result) cout << endl << "Account's name changed successfully" << endl;
+                else printError(result);
+
+                break;
+
+            case 6:
+                // edit transaction
+                cout << "Enter your name: ";
+                cin >> name, cin >> surname;
+                name = name + " " + surname;
+                cout << "Enter the Bank Account: ";
+                cin >> account;
+                cout << "Enter the ID of the Transaction: ";
+                cin >> result; // free random variable (date)
+
+                cout << "Enter the operation (deposit: 1, withdrawal: 2, bank transfert: 3): ";
+                cin >> operation;
+                cout << "Enter the amount: ";
+                cin >> amount;
+
+                if(operation == 3) {
+                    cout << "Enter recipient's Bank Account name: ";
+                    cin >> recipient;
+                    cout << "Enter the role (received: 0, sent: 1): ";
+                    cin >> role;
+
+                    result = pM.editTransaction(name, account, result, operation, recipient, amount, role);
+                } else {
+                    result = pM.editTransaction(name, account, result, operation, amount);
+                }
+
+                if(!result) cout << "Transaction edited successfully" << endl;
+                else printError(result);
+
+                break;
+
+            case 7:
                 // print
                 pM.printInfo();
 
                 break;
 
-            case 6:
+            case 8:
                 // print transactions by type
                 do {
-                    cout << "Enter an operation (deposit: D, withdrawal: W, bank transfert: B): ";
+                    cout << "Enter an operation (deposit: 1, withdrawal: 2, bank transfert: 3): ";
                     cin >> operation;
-                } while(operation != 'D' && operation != 'W' && operation != 'B');
+                } while(operation < 1 || operation > 3);
 
-                result = pM.printInfo(operation);
-                if(result)
-                    printError(result);
+                ProgramManager::printInfo(pM.getByOp(operation));
 
                 break;
 
-            case 7:
+            case 9:
                 // print transactions by date
                 cout << "Insert a date (dd/mm/yyyy): ";
-                cin >> name; // random free variable (date)
+                cin >> name; // random free variable for date
 
-                result = pM.printInfo(name);
-                if(result)
-                    printError(result);
+                ProgramManager::printInfo(pM.getByDate(name));
 
                 break;
 
-            case 8:
+            case 10:
+                // search bank account
+                cout << "Enter your name: ";
+                cin >> name, cin >> surname;
+                cout << "Enter a part of the Bank Account's name: ";
+                cin >> account;
+
+                result = pM.searchAccount(name + " " + surname, account);
+
+                if(result) printError(result);
+                break;
+
+            case 11:
+                // delete user
+                cout << "Enter the name of the user: ";
+                cin >> name, cin >> surname;
+
+                result = pM.deleteUser(name + " " + surname);
+
+                if(!result) cout << endl << "User delete successfully" << endl;
+                else printError(result);
+
+                break;
+
+            case 12:
+                // delete bank account
+                cout << "Enter the name of the user: ";
+                cin >> name, cin >> surname;
+                cout << "Enter the name of the Bank Account: ";
+                cin >> account;
+
+                result = pM.deleteAccount(name + " " + surname, account);
+
+                if(!result) cout << endl << "Bank account deleted successfully" << endl;
+                else printError(result);
+
+                break;
+
+            case 13:
+                // delete transaction
+                cout << "Enter the name of the user: ";
+                cin >> name, cin >> surname;
+                cout << "Enter the Bank Account: ";
+                cin >> account;
+                cout << "Enter the ID of the Transaction: ";
+                cin >> result; // free random variable (ID)
+
+                result = pM.deleteTransaction(name + " " + surname, account, result);
+
+                if(!result) cout << endl << "Transaction deleted successfully" << endl;
+                else printError(result);
+
+                break;
+
+            case 14:
+                // reset transactions from one Bank account
+                cout << "Enter your name: ";
+                cin >> name, cin >> surname;
+                cout << "Enter the name of the Bank account: ";
+                cin >> account;
+
+                pM.clearTransactions(name + " " + surname, account);
+                cout << "Transactions cleared successfully" << endl;
+
+                break;
+
+            case 15:
                 // reset transactions
                 pM.clearTransactions();
                 cout << "Transactions cleared successfully" << endl;
 
                 break;
 
-            case 9:
-                // reset transactions from one Bank account
-                cout << "Enter a user's name: ";
-                cin >> name;
-                cout << "Enter a user's surname: ";
-                cin >> surname;
-                cout << "Enter one of the Bank account's iban: ";
-                cin >> iban;
-
-                pM.clearTransactions(name + " " + surname, iban);
-                cout << "Transactions cleared successfully" << endl;
-
-                break;
-
-            case 10:
-                // delete user
-                cout << "Enter the name of the user you want to delete: ";
-                cin >> name;
-                cout << "Enter the surname of the user you want to delete: ";
-                cin >> surname;
-
-                result = pM.deleteUser(name + " " + surname);
-                if(!result)
-                    cout << endl << "User delete successfully" << endl;
-                else
-                    printError(result);
-
-                break;
-
-            case 11:
-                // delete bank account
-                cout << "Enter the name of the user you want to delete: ";
-                cin >> name;
-                cout << "Enter the surname of the user you want to delete: ";
-                cin >> surname;
-                cout << "Enter the iban of the account: ";
-                cin >> iban;
-
-                result = pM.deleteBankAccount(name + " " + surname, iban);
-                if(!result)
-                    cout << endl << "Bank account deleted successfully" << endl;
-                else
-                    printError(result);
-
-                break;
-
-            case 12:
+            case 16:
                 // save and exit
                 if(pM.saveData()) {
                     cout << "You exit the program" << endl;
                     cout << "Data saved successfully" << endl;
                 } else
-                    cout << "Something went wrong with saving data" << endl;
+                    cout << "Something went wrong saving data" << endl;
 
                 break;
 
@@ -233,7 +275,7 @@ int main() {
 
                 break;
         }
-    } while(choice != 0 && choice != 12);
+    } while(choice != 0 && choice != 16);
 
     return 0;
 }
@@ -275,5 +317,11 @@ void printError(int val) {
         case 9:
             cout << endl << "Incorrect data" << endl;
             break;
+
+        case 10:
+            cout << endl << "Transaction not found" << endl;
+
+        default:
+            cout << endl << "Error" << endl;
     }
 }

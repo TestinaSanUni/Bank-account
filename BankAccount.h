@@ -14,8 +14,8 @@ class BankAccount {
 public:
     // basic methods
     explicit BankAccount(float b = 0) : balance(b) {};
-    explicit BankAccount(const string& i, float b = 0) : name(i), balance(b) {}
-    BankAccount(const string& i, float b, const map<time_t, Transaction>& t) : name(i), balance(b), transactions(t) {}
+    explicit BankAccount(const string& n, float b = 0) : name(n), balance(b) {}
+    BankAccount(const string& n, float b, const map<time_t, Transaction>& t) : name(n), balance(b), transactions(t) {}
 
     string getName() const { return name; }
     float getBalance() const { return balance; }
@@ -28,6 +28,8 @@ public:
     int addTransaction(time_t t, int o, float a, const string& u, bool r);
 
     void printAccount() const;
+    map<time_t, Transaction> getByOp(int op) const;
+    map<time_t, Transaction> getByDate(const string& date) const;
     int editTransaction(int id, int o, float a);
     int editTransaction(int id, int o, float a, const string& u, bool r);
 
@@ -36,10 +38,12 @@ public:
 
 private:
     Transaction getTransactionById(int id) const;
+    static string formatData(time_t time);
+    static bool checkData(const string& date);
 
     string name;
     float balance;
-    map<time_t , Transaction> transactions;
+    map<time_t, Transaction> transactions;
 };
 
 

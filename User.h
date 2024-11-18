@@ -25,7 +25,10 @@ public:
     int addTransaction(const string& account, time_t t, int o, float a, const string& u, bool r);
 
     void printUser() const;
-    int searchAccount(const string& account) const;
+    map<string, BankAccount> getByOp(int op) const;
+    map<string, BankAccount> getByDate(const string& date) const;
+    map<string, BankAccount> searchAccount(const string& account) const;
+
     int editAccount(const string& oldName, const string& newName);
     int editTransaction(const string& account, int id, int o, float a);
     int editTransaction(const string& account, int id, int o, float a, const string& u, bool r);
@@ -35,10 +38,10 @@ public:
     void clearTransactions(const string& account);
     void clearTransactions();
 
+private:
     // auxiliary methods
     bool findAccount(const string &account) const;
 
-private:
     string name;
     map<string, BankAccount> accounts;
 };

@@ -9,6 +9,10 @@
 //      MAIN METHODS
 // ======================================================================================
 
+User ProgramManager::getUser(const std::string &user) {
+    if(!findUser(user)) return User();
+    return users[user];
+}
 
 // ========================================= Adds ===============================================
 
@@ -28,7 +32,7 @@ int ProgramManager::addTransaction(const std::string &user, const std::string &a
     return users[user].addTransaction(account, t, o, a);
 }
 
-int ProgramManager::addTransaction(const std::string &user, const std::string &account, int o, const std::string &u, float a, time_t t) {
+int ProgramManager::addTransaction(const std::string &user, const std::string &account, int o, float a, const std::string &u, time_t t) {
     if(!findUser(user)) return 1; // user not found
 
     string recipient = findRecipientByAccount(u);
@@ -59,94 +63,52 @@ void ProgramManager::printInfo(const map<string, User>& u) {
             i.second.printUser();
             cout << " ---------------------------------------------------------------------- " << endl;
         }
-    } else cout << "There are no transactions" << endl;
+    } else cout << "No information has been found" << endl;
 }
 
 map<string, User> ProgramManager::getByOp(int operation) const {
-    map<string, User> u;
+    map<string, User> m;
 
-    if(operation >= 1 && operation <= 3) {
-        bool foundUser = false, foundAccount = false;
-        Transaction temp;
+    for (const auto& i : users) {
+        map<string, BankAccount> bA = i.second.getByOp(operation);
 
-        for (auto i: users) {
-            map<string, BankAccount> bA;
-
-            for (const auto &j: i.second.getAccounts()) {
-                map<time_t, Transaction> t;
-
-                for (const auto &k: i.second.getAccount(j).getTransactions()) {
-                    temp = i.second.getAccount(j).getTransaction(k);
-
-                    if (temp.getOperation() == operation) {
-                        t.emplace(temp.getTrTime(), temp);
-                        foundUser = true;
-                        foundAccount = true;
-                    }
-                }
-
-                if (foundAccount) {
-                    foundAccount = false;
-                    BankAccount bATemp(i.second.getAccount(j).getName(), i.second.getAccount(j).getBalance(), t);
-                    bA.emplace(i.second.getAccount(j).getName(), bATemp);
-                }
-            }
-
-            if (foundUser) {
-                foundUser = false;
-                User uTemp(i.first, bA);
-                u.emplace(i.first, uTemp);
-            }
+        if (!bA.empty()) {
+            User u = User(i.first, bA);
+            m.emplace(i.first, u);
         }
-    } else cout << "Invalid Operation" << endl;
+    }
 
-    return u;
+    return m;
 }
 
-map<string, User> ProgramManager::getByDate(const std::string& date) const {
-    map<string, User> u;
+map<string, User> ProgramManager::getByDate(const std::string &date) const {
+    map<string, User> m;
 
-    if(checkData(date)) {
-        bool foundUser = false, foundAccount = false;
-        Transaction temp;
+    for (const auto& i : users) {
+        map<string, BankAccount> bA = i.second.getByDate(date);
 
-        for (auto i: users) {
-            map<string, BankAccount> bA;
-
-            for (const auto &j: i.second.getAccounts()) {
-                map<time_t, Transaction> t;
-
-                for (const auto &k: i.second.getAccount(j).getTransactions()) {
-                    temp = i.second.getAccount(j).getTransaction(k);
-
-                    if (formatData(temp.getTrTime()) == date) {
-                        t.emplace(temp.getTrTime(), temp);
-                        foundUser = true;
-                        foundAccount = true;
-                    }
-                }
-
-                if (foundAccount) {
-                    foundAccount = false;
-                    BankAccount bATemp(i.second.getAccount(j).getName(), i.second.getAccount(j).getBalance(), t);
-                    bA.emplace(i.second.getAccount(j).getName(), bATemp);
-                }
-            }
-
-            if (foundUser) {
-                foundUser = false;
-                User uTemp(i.first, bA);
-                u.emplace(i.first, uTemp);
-            }
+        if (!bA.empty()) {
+            User u = User(i.first, bA);
+            m.emplace(i.first, u);
         }
-    } else cout << "Invalid date" << endl;
+    }
 
-    return u;
+    return m;
 }
 
-int ProgramManager::searchAccount(const std::string &user, const std::string &account) {
-    if(!findUser(user)) return 1; // user not found
-    return users[user].searchAccount(account);
+map<string, User> ProgramManager::searchAccount(const std::string &account) const {
+    map<string, User> m;
+
+    for (const auto& i : users) {
+        map<string, BankAccount> bA = i.second.searchAccount(account);
+
+        if (!bA.empty()) {
+            User u = User(i.first, bA);
+            m.emplace(i.first, u);
+        }
+    }
+
+    return m;
 }
 
 
@@ -172,8 +134,10 @@ int ProgramManager::editTransaction(const std::string &user, const std::string &
     return users[user].editTransaction(account, id, o, a);
 }
 
-int ProgramManager::editTransaction(const std::string &user, const std::string &account, int id, int o, const std::string &u, float a, bool r) {
+int ProgramManager::editTransaction(const std::string &user, const std::string &account, int id, int o, float a, const std::string &u, bool r) {
     if(!findUser(user)) return 1; // user not found
+    if(findRecipientByAccount(u) == " ") return 6; // recipient account not found
+
     return users[user].editTransaction(account, id, o, a, u, r);
 }
 
@@ -224,56 +188,4 @@ string ProgramManager::findRecipientByAccount(const string& account) {
         }
     }
     return " ";
-}
-
-string ProgramManager::formatData(time_t time) {
-    struct tm tm = *localtime(&time);
-    string date;
-
-    if(tm.tm_mday < 10) date = "0" + to_string(tm.tm_mday);
-    else date = to_string(tm.tm_mday);
-
-    date = date + "/";
-
-    if(tm.tm_mon + 1 < 10) date = date + "0" + to_string(tm.tm_mon + 1);
-    else date = date + to_string(tm.tm_mon + 1);
-
-    date = date + "/";
-
-    date = date + to_string(tm.tm_year + 1900);
-
-    return date;
-}
-
-bool ProgramManager::checkData(const std::string& date) {
-    string dayS = date.substr(0, 2), monthS = date.substr(3, 2), yearS = date.substr(6, 4); // getting substrings
-    int day = stoi(dayS), month = stoi(monthS), year = stoi(yearS); // convert strings into ints
-
-    time_t t = time(&t);
-    struct tm currYear = *localtime(&t);
-
-    if(year >= 1900 && year <= currYear.tm_year + 1900) {
-        if(month > 0 && month < 13) {
-            // month with 30 days
-            if(month == 4  || month == 6 || month == 9 || month == 11) {
-                if(day > 0 &&  day <= 30)
-                    return true;
-            } else if(month == 2) {
-                // february
-                if (year % 4 == 0) {
-                    if (day > 0 && day <= 29)
-                        return true;
-                } else {
-                    if (day > 0 && day <= 28)
-                        return true;
-                }
-            } else {
-                // other months
-                if(day > 0 && day <= 31)
-                    return true;
-            }
-        }
-    }
-
-    return false;
 }

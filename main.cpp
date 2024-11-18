@@ -86,7 +86,7 @@ int main() {
                     cout << "Enter recipient's Bank Account name: ";
                     cin >> recipient;
 
-                    result = pM.addTransaction(name, account, operation, recipient, amount);
+                    result = pM.addTransaction(name, account, operation, amount, recipient);
                 } else {
                     result = pM.addTransaction(name, account, operation, amount);
                 }
@@ -149,7 +149,7 @@ int main() {
                     cout << "Enter the role (received: 0, sent: 1): ";
                     cin >> role;
 
-                    result = pM.editTransaction(name, account, result, operation, recipient, amount, role);
+                    result = pM.editTransaction(name, account, result, operation, amount, recipient, role);
                 } else {
                     result = pM.editTransaction(name, account, result, operation, amount);
                 }
@@ -167,10 +167,8 @@ int main() {
 
             case 8:
                 // print transactions by type
-                do {
-                    cout << "Enter an operation (deposit: 1, withdrawal: 2, bank transfert: 3): ";
-                    cin >> operation;
-                } while(operation < 1 || operation > 3);
+                cout << "Enter an operation (deposit: 1, withdrawal: 2, bank transfert: 3): ";
+                cin >> operation;
 
                 ProgramManager::printInfo(pM.getByOp(operation));
 
@@ -187,14 +185,11 @@ int main() {
 
             case 10:
                 // search bank account
-                cout << "Enter your name: ";
-                cin >> name, cin >> surname;
                 cout << "Enter a part of the Bank Account's name: ";
                 cin >> account;
 
-                result = pM.searchAccount(name + " " + surname, account);
+                ProgramManager::printInfo(pM.searchAccount(account));
 
-                if(result) printError(result);
                 break;
 
             case 11:
